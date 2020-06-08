@@ -83,7 +83,7 @@
     <div class="w3-dropdown-content w3-bar-block w3-border">
 		<a  onClick="filterEventsByDropDownType('')"  class="w3-bar-item w3-button">Reset</a>
 		<a  onClick="filterEventsByDropDownType('In Person')"  class="w3-bar-item w3-button">In Person</a>
-		<a  onClick="filterEventsByDropDownType('In Person')"  class="w3-bar-item w3-button">Online</a>
+		<a  onClick="filterEventsByDropDownType('Online')"  class="w3-bar-item w3-button">Online</a>
  		
     </div>
   </div>
@@ -508,6 +508,31 @@ function filterEventsByDropDownCity(city) {
     }
 }
 
+	function filterEventsByDropDownType(city) {
+    var elmnt = document.getElementById("loadEvents");
+        elmnt.scrollIntoView();
+        //var city=cit;
+        //input = document.getElementById("myInput");
+        filter = city.toLowerCase();
+        //filter = city;
+        div = document.getElementById("loadEvents");
+         p = div.getElementsByTagName("div");
+        for (i = 0; i < p.length; i++) {
+                pf = p[i].getElementsByTagName("pf")[0];
+                //para = li[i].getElementsByTagName("a")[1];
+                if (pf) {
+                        txtValue = pf.textContent || pf.innerText;
+                        //txtValue2 = para.textContent || para.innerText;
+                        if ((txtValue.toLowerCase().indexOf(filter) > -1)) {
+                            p[i].style.display = "";
+
+                        }
+                        else {
+                                p[i].style.display = "none";}
+
+        }
+    }
+}
 
 </script>
 
