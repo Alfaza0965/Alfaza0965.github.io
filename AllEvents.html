@@ -12,6 +12,7 @@
 
     gtag('config', 'G-ME87R2ZFZ6');
 </script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </head>
 <meta charset="UTF-8">
@@ -126,7 +127,12 @@
 
 
 
-<p id="loadEvents"></p>
+<p id="loadEvents">
+	<!--
+	<lottie-player id="loadEventsAni"src="https://assets9.lottiefiles.com/datafiles/gUENLc1262ccKIO/data.json"  background="transparent"  speed="2"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>
+		-->
+	</p>
+
 
 	
 <script>
@@ -134,27 +140,42 @@ var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
-                var x, y="";
+                var x ="";
+				var y ="";
+				//console.log(myObj);
                 //input = document.getElementById("myInput");
 				//console.log(JSON.stringify(myObj, undefined, 4));
                  //x+= "<div class='w3-row-padding w3-center w3-margin-top'><div class='w3-third'><div class='w3-card w3-container' style='min-height:460px'>";
                  //"<div class='w3-row w3-border'>";
-                for (i in myObj.events)
+                //for (i in myObj.events)
+				for (var i=0; i< myObj.events.length-1; i++)
                 {
-                                 {
+                                 
                             x+= "<div class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container'style='height:660px'>"
-                                    +"<h3> <a href='#'>"+myObj.events[i].name + "</a></h3>"
+                                    +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
                                     
 									+"<img src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:70%'>"
                                 	+"<p>"+ myObj.events[i].date +"</p>"    
 									+"<p>"+ myObj.events[i].timeStart +"</p>"
                                     +"<p><a>"+ myObj.events[i].address +"</a></p>"
                                     +"<p>"+ myObj.events[i].description +"</p>"
-									+"<p class=''><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf></div><br></div></div>";
-                                             }
+									+"<p><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf><p>"
+									+"</div><br></div>";
+					document.getElementById("loadEvents").innerHTML = x;
+                                        
+								 
+					//console.log("i="+ i+"  data = "+x);
 
         		}
-			 	
+			
+			/*
+			Next Steps:
+			1) Save JSON as Google Drive file
+			2) Save it to the same link as befoere
+			
+			*/
+			//document.getElementById("loadEvents").innerHTML = x;
+			 	 //document.getElementById("loadEvents").innerHTML = x;
 				y+="<a onclick='filterEventsByDropDownCity(&quot;&quot;)' class='w3-bar-item w3-button'>Reset</a>";
 				for(j in myObj.cities)
 					{
@@ -166,6 +187,9 @@ xmlhttp.onreadystatechange = function() {
     for(var i=0; i<tmpCities.length; i++)
     {
          x+="<a onclick='filterEventsByDropDownCity(&quot;" + tmpCities[i]+ "&quot;)' class='w3-bar-item w3-button'>" +tmpCities[i] + "</a>";
+
+
+Let Me Know is a social platform in where communities can come together and share with each other resources, events, and many more. It is a tool for awareness. At the moment, Let Me Know is in support with COVID 19 and Black life Matters sociakl events. We do not endorse any of the events in our site, always remember to be careful as we do not manage or vouch for any of the events listed on the site, we simply share the resources with you the end user.
 
     }
 
@@ -181,11 +205,11 @@ xmlhttp.onreadystatechange = function() {
 					}
 
 
-                document.getElementById("loadEvents").innerHTML = x;
+                
 				document.getElementById("citiesdd").innerHTML = y;
         }
 };
-xmlhttp.open("GET", "https://script.google.com/macros/s/AKfycbyybHsgXjD7RF-iYfJycYh_pijT7AcqOLYhs6ioUfyzRS8xSYM/exec", true);
+xmlhttp.open("GET", "https://drive.google.com/open?id=1O0L4pX-8sFnGXkmHPr0RvJtQynntXnmS", true);
 xmlhttp.send();
 </script>
 
