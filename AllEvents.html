@@ -13,6 +13,7 @@
     gtag('config', 'G-ME87R2ZFZ6');
 </script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </head>
 <meta charset="UTF-8">
@@ -130,7 +131,9 @@
 <p id="loadEvents">
 	<!--
 	<lottie-player id="loadEventsAni"src="https://assets9.lottiefiles.com/datafiles/gUENLc1262ccKIO/data.json"  background="transparent"  speed="2"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>
+
 		-->
+<lottie-player src="https://assets7.lottiefiles.com/packages/lf20_gwBIWJ.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
 	</p>
 
 
@@ -207,7 +210,7 @@ Let Me Know is a social platform in where communities can come together and shar
 
                 
 				document.getElementById("citiesdd").innerHTML = y;
-        }
+        } //else {document.getElementById("loading").style.display="none";}
 };
 xmlhttp.open("GET", "https://s3-us-west-1.amazonaws.com/zanproduction.org/eventsXported.json", true);
 xmlhttp.send();
