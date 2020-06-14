@@ -93,13 +93,13 @@
 
 
 <!----- 3rd Drop Down -->
-<div class="w3-third w3-container">
- <div class="w3-dropdown-hover w3-center w3-mobile">
-    <button class="w3-button w3-black"></button>
+<div class="w3-third w3-container w3-center">
+ <div class="w3-dropdown-hover  w3-mobile">
+    <button class="w3-button w3-black">Movements</button>
     <div class="w3-dropdown-content w3-bar-block w3-border">
-      <a href="#" class="w3-bar-item w3-button">Link 1</a>
-      <a href="#" class="w3-bar-item w3-button">Link 2</a>
-      <a href="#" class="w3-bar-item w3-button">Link 3</a>
+      <a href="#" class="w3-bar-item w3-button">#COVID-19</a>
+      <a href="#" class="w3-bar-item w3-button">#BlackLivesMatter</a>
+      <a href="#" class="w3-bar-item w3-button">#UnitedWeStand</a>
     </div>
   </div>
 
@@ -123,94 +123,35 @@
 
 <!-- -----------------------------------------------------------------------------------Events Row -->
 <hr>
-<div class="w3-row-padding w3-padding-64 w3-margin-top" id="work">
+<div class="w3-row-padding w3-padding-64 w3-margin-top w3-center" id="work">
 
 
-
+<p id="laoding">
+	Give us a few seconds while we load the data...
+	
+	<lottie-player class = "w3-center"  src="https://assets7.lottiefiles.com/packages/lf20_gwBIWJ.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; text-align: center;margin-left: auto;
+    margin-right: auto;"  loop  autoplay></lottie-player>
+	
+</p>
 
 <p id="loadEvents">
 	<!--
 	<lottie-player id="loadEventsAni"src="https://assets9.lottiefiles.com/datafiles/gUENLc1262ccKIO/data.json"  background="transparent"  speed="2"  style="width: 300px; height: 300px;"  loop controls autoplay></lottie-player>
 
 		-->
-<lottie-player src="https://assets7.lottiefiles.com/packages/lf20_gwBIWJ.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
-	</p>
+
 
 
 	
 <script>
 var xmlhttp = new XMLHttpRequest();
+var myObj;
 xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-                var myObj = JSON.parse(this.responseText);
-                var x ="";
-				var y ="";
-				//console.log(myObj);
-                //input = document.getElementById("myInput");
-				//console.log(JSON.stringify(myObj, undefined, 4));
-                 //x+= "<div class='w3-row-padding w3-center w3-margin-top'><div class='w3-third'><div class='w3-card w3-container' style='min-height:460px'>";
-                 //"<div class='w3-row w3-border'>";
-                //for (i in myObj.events)
-				for (var i=0; i< myObj.events.length-1; i++)
-                {
-                                 
-                            x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container'style='height:660px'>"
-                                    +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
-                                    
-									+"<img src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:70%'>"
-                                	+"<p>"+ myObj.events[i].date +"</p>"    
-									+"<p>"+ myObj.events[i].timeStart +"</p>"
-                                    +"<p><a>"+ myObj.events[i].address +"</a></p>"
-                                    +"<p>"+ myObj.events[i].description +"</p>"
-									+"<p><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf><p>"
-									+"</div><br></div>";
-					document.getElementById("loadEvents").innerHTML = x;
-                                        
-								 
-					//console.log("i="+ i+"  data = "+x);
-
-        		}
-			
-			/*
-			Next Steps:
-			1) Save JSON as Google Drive file
-			2) Save it to the same link as befoere
-			
-			*/
-			//document.getElementById("loadEvents").innerHTML = x;
-			 	 //document.getElementById("loadEvents").innerHTML = x;
-				y+="<a onclick='filterEventsByDropDownCity(&quot;&quot;)' class='w3-bar-item w3-button'>Reset</a>";
-				for(j in myObj.cities)
-					{
-						//y+="<a onclick='filterEventsByDropDownCity(&quot;" + myObj.cities[j] + "&quot;)' class='w3-bar-item w3-button'>"
-						//+myObj.cities[j]+"</a>";
-						//+"<p>"+  +"</p>"
-				y+="<a onclick='filterEventsByDropDownCity(&quot;" +myObj.cities[j].city+"&quot;)' class='w3-bar-item w3-button'>"+ myObj.cities[j].city+"</a>";
-/*
-    for(var i=0; i<tmpCities.length; i++)
-    {
-         x+="<a onclick='filterEventsByDropDownCity(&quot;" + tmpCities[i]+ "&quot;)' class='w3-bar-item w3-button'>" +tmpCities[i] + "</a>";
-
-
-Let Me Know is a social platform in where communities can come together and share with each other resources, events, and many more. It is a tool for awareness. At the moment, Let Me Know is in support with COVID 19 and Black life Matters sociakl events. We do not endorse any of the events in our site, always remember to be careful as we do not manage or vouch for any of the events listed on the site, we simply share the resources with you the end user.
-
-    }
-
-*/
-   			// x+="<a onclick='filterEventsByDropDownCity(&quot;Palo Verdes&quot;)' class='w3-bar-item w3-button'>Palo Verdes</a>";
-   			//  x+="<a onclick='filterEventsByDropDownCity(&quot;&quot;)' class='w3-bar-item w3-button'>Redondo Beach</a>";
-
-			//document.getElementById('citiesdd').innerHTML = y;
-
-						
-						
-						
-					}
-
-
-                
-				document.getElementById("citiesdd").innerHTML = y;
-        } //else {document.getElementById("loading").style.display="none";}
+                myObj = JSON.parse(this.responseText);
+				LoadEvents();
+               
+        } 
 };
 xmlhttp.open("GET", "https://s3-us-west-1.amazonaws.com/zanproduction.org/eventsXported.json", true);
 xmlhttp.send();
@@ -291,6 +232,54 @@ xmlhttp.send();
 </script>
 
 -->
+<script>
+	function LoadEvents()
+	{
+		//myObj = JSON.parse(this.responseText);
+                var x ="";
+				var y ="";
+				for (var i=0; i< myObj.events.length-1; i++)
+                {
+                                 
+                            x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='height:669px'>"
+                                    +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
+                                    
+									+"<img src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:70%'>"
+                                	+"<p>"+ myObj.events[i].date +"</p>"    
+									+"<p>"+ myObj.events[i].timeStart +"</p>"
+                                    +"<p><a>"+ myObj.events[i].address +"</a></p>"
+                                    +"<p>"+ myObj.events[i].description +"</p>"
+									+"<p><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf><p>"
+									+"</div><br></div>";
+					document.getElementById("loadEvents").innerHTML = x;
+                                        
+								 
+					//console.log("i="+ i+"  data = "+x);
+
+        		}
+			
+			/*
+			Next Steps:
+			1) Save JSON as Google Drive file (Incomplete -Google Drive lIMIYTATION)
+			2) Save it to the same link as befoere
+			
+			*/
+			//document.getElementById("loadEvents").innerHTML = x;
+			 	 //document.getElementById("loadEvents").innerHTML = x;
+				y+="<a onclick='filterEventsByDropDownCity(&quot;&quot;)' class='w3-bar-item w3-button'>Reset</a>";
+				for(j in myObj.cities)
+					{
+						y+="<a onclick='filterEventsByDropDownCity(&quot;" +myObj.cities[j].city+"&quot;)' class='w3-bar-item w3-button'>"+ myObj.cities[j].city+"</a>";		
+					}
+				document.getElementById("citiesdd").innerHTML = y;
+				document.getElementById("laoding").style.display="none";
+		
+        } 
+		
+	
+	
+</script>
+	
 <!--
 
 <script>
