@@ -13,7 +13,7 @@
     gtag('config', 'G-ME87R2ZFZ6');
 </script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
 
 </head>
 <meta charset="UTF-8">
@@ -154,7 +154,7 @@ xmlhttp.onreadystatechange = function() {
 				for (var i=0; i< myObj.events.length-1; i++)
                 {
                                  
-                            x+= "<div class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container'style='height:660px'>"
+                            x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container'style='height:660px'>"
                                     +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
                                     
 									+"<img src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:70%'>"
@@ -221,6 +221,21 @@ xmlhttp.send();
 	
 	//https://drive.google.com/drive/folders/1rpPLBEadhMLtDgXsMKGA5VIfrzgYKFwa?usp=sharing
 		//https://www.googleapis.com/drive/v2/files/$1O0L4pX-8sFnGXkmHPr0RvJtQynntXnmS?alt=media&source=downloadUrl
+	
+  let animation = anime({
+  targets: '#eventItems',
+  opacity: 1,
+  translateY: 50, 
+  rotate: {
+    value: 360,
+    duration: 2000,
+    easing: 'easeInExpo'
+  }, 
+  scale: anime.stagger([0.7, 1], {from: 'center'}), 
+  delay: anime.stagger(100, {start: 1000}), 
+  translateX: [-10, 30]
+});            
+	
 	
 </script>
 
@@ -405,20 +420,27 @@ document.getElementById('citiesdd').innerHTML = x;
 
 <!-- -------------------------------------------------------------------------------------------------------------------------------Footer -->
 <footer class="w3-container  w3-teal w3-center">
-    <h4>Coming Soon</h4>
-    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img src="img/download-on-the-app-store-apple.svg"  style="width:20%"> <!--Coming Soon --></a>
-    <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img src="img/google-play-download-android-app.svg" style="width:20%"> <!--Coming Soon --></a>
+    <h4><u>Coming Soon</u></h4>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img src="img/download-on-the-app-store-apple.svg"  class="w3-button" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img src="img/google-play-download-android-app.svg" class="w3-button" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
 
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noreferrer">w3.css</a></p>
 
-    <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-        <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
-        <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
-        <i class="fa fa-chevron-circle-up"></i></span></a>
-    </div>
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+
 </footer>
 
+
 <script>
+
+	
+
+
+	
 // Script for side navigation
 function w3_open() {
     var x = document.getElementById("mySidebar");
