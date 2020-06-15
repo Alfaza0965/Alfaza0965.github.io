@@ -238,7 +238,7 @@ xmlhttp.send();
 		//myObj = JSON.parse(this.responseText);
                 var x ="";
 				var y ="";
-				for (var i=0; i< myObj.events.length-1; i++)
+				for (var i=0; i< myObj.events.length; i++)
                 {
                                  
                             x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='height:669px'>"
@@ -254,7 +254,7 @@ xmlhttp.send();
 					document.getElementById("loadEvents").innerHTML = x;
                                         
 								 
-					//console.log("i="+ i+"  data = "+x);
+				
 
         		}
 			
