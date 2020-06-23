@@ -75,18 +75,15 @@ xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
                 var prog = JSON.parse(this.responseText);
 
-                var x="<ul class='w3-ul w3-card-4 w3-white'>";
-                //input = document.getElementById("myInput");
-                 //x+= "<div class='w3-row-padding w3-center w3-margin-top'><div class='w3-third'><div class='w3-card w3-container' style='min-height:460px'>";
-                 //"<div class='w3-row w3-border'>";
+				var x="<ul class='w3-ul w3-card-4 w3-white' >";
                 for (i in prog.programs)
                 {
 
 
-                           x+=" <li class='w3-bar'> <div class='w3-bar-item'>";
-                           x+="<span class='w3-large'><b><pf>" + prog.programs[i].title +"<pf></b></span><br>";
-                           x+="<span><pf>"+ prog.programs[i].time +"<pf></span><br><br>";
-                           x+="<span><pf>"+ prog.programs[i].description +"<pf></span>";
+                           x+=" <li class='w3-bar'> <div class='w3-bar-item w3-margin-bottom'>";
+                           x+="<span class='w3-large'><b>" + prog.programs[i].title +"</b></span><br>";
+                           x+="<span>"+ prog.programs[i].time +"</span><br><br>";
+                           x+="<span>"+ prog.programs[i].description +"</span>";
                            x+="</div></li>";
 
 
@@ -94,15 +91,14 @@ xmlhttp.onreadystatechange = function() {
         }//End checking of input length
               x+="</ul>";
 
-                document.getElementById("loadPrograms").innerHTML = x;
+                document.getElementById("programs").innerHTML = x;
         }
 };
-xmlhttp.open("GET", "http://letmeknow.zanproduction.org/basicprograms.json", true);
+xmlhttp.open("GET", "https://zanproduction.org/basicprograms.json", true);
 xmlhttp.send();
 </script>
 
 </div>
-
 
 
 
