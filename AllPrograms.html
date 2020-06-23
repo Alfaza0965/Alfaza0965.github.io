@@ -80,7 +80,8 @@ xmlhttp.onreadystatechange = function() {
                 {
 
 
-                           x+=" <li class='w3-bar'> <div class='w3-bar-item w3-margin-bottom'>";
+                           x+=" <li class='w3-bar'> <div class='w3-bar-item w3-margin-bottom w3-container'>";
+						   x+=" <img src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w80-h80' class='w3-border w3-left' alt='Norway'>  "
                            x+="<span class='w3-large'><b>" + prog.programs[i].title +"</b></span><br>";
                            x+="<span>"+ prog.programs[i].time +"</span><br><br>";
                            x+="<span>"+ prog.programs[i].description +"</span>";
@@ -91,7 +92,7 @@ xmlhttp.onreadystatechange = function() {
         }//End checking of input length
               x+="</ul>";
 
-                document.getElementById("programs").innerHTML = x;
+                document.getElementById("loadPrograms").innerHTML = x;
         }
 };
 xmlhttp.open("GET", "https://zanproduction.org/basicprograms.json", true);
