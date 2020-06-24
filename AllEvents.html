@@ -66,6 +66,7 @@
          <div class="w3-container" style="position:relative">
     <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Events</b></h1>
     </div>	
+</div>
 
 
 <!-- -----------------------------------------------------------------------------------Drop Down Filter Row -->
@@ -147,13 +148,17 @@ var xmlhttp = new XMLHttpRequest();
 var myObj;
 xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-                myObj = JSON.parse(this.responseText);
+            	//var byteArray = new Uint8Array(this.responseText);    
+				myObj = JSON.parse(this.responseText);
 				LoadEvents();
                
         } 
 };
 xmlhttp.open("GET", "https://s3-us-west-1.amazonaws.com/zanproduction.org/eventsXported.json", true);
 xmlhttp.send();
+	
+	
+	
   let animation = anime({
   targets: '#eventItems',
   opacity: 1,
@@ -209,7 +214,7 @@ xmlhttp.send();
 </script>
 
 </div>
-
+</div>
 
 <!-- -------------------------------------------------------------------------------------------------------------------------------Footer -->
 <footer class="w3-container  w3-teal w3-center">
