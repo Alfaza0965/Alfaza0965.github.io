@@ -184,7 +184,7 @@ xmlhttp.send();
 				for (var i=0; i< myObj.events.length; i++)
                 {
                                  
-                            x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='height:669px'>"
+                            x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
                                     +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
                                     
 									+"<img src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:50%'>"
@@ -192,7 +192,10 @@ xmlhttp.send();
 									+"<p>"+ myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd +"</p>"
                                     +"<p><a>"+ myObj.events[i].address +"</a></p>"
                                     +"<p>"+ myObj.events[i].description +"</p>"
-									+"<p><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf><p>"
+									+"<p><b>Tags: </b>"+ myObj.events[i].eventHashTag +"<p>"
+									+"<p class ='w3-hide'><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf><p>"
+					
+					
 									+"</div><br></div>";
 
         		}
