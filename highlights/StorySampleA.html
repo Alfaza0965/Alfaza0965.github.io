@@ -13,8 +13,6 @@
     gtag('config', 'G-ME87R2ZFZ6');
 </script>
 
-<script data-ad-client="ca-pub-1134374927268143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
 
 <script type = "text/javascript">
 
@@ -39,7 +37,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="site2.css">
+<link rel="stylesheet" href="../site2.css">
 
 <!--<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -94,179 +92,52 @@
     </div>
 </div>
 
-<!-- -----------------------------------------------------------------------------------Partial Events Row -->
-<hr>
-<div class="w3-row-padding w3-padding-64 w3-margin-top" id="work">
-    <!-- -------------------------------------------------------------------------------------------------------Go to more events Button Container -->
-<div class="w3-container" style="position:relative">
-    <h1 class="w3-jumbo w3-text-red w3-shadow w3-left-align" ><b>Events</b></h1>
-</div>
-
-
-<p id="loadEvents"></p>
-<script>
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-                var myObj = JSON.parse(this.responseText);
-                var x="";
-                for (i in myObj.events)
-                {
-                                   if(i <3){
-                            x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
-                                    +"<h3> <a href='#'>"+myObj.events[i].name + "</a></h3>"
-                                    
-									+"<img src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:70%'>"
-                                    +"<p>"+ myObj.events[i].timeStart +"</p>"
-                                    +"<p>"+ myObj.events[i].date +"</p>"
-                                    +"<p><a>"+ myObj.events[i].address +"</a></p>"
-                                    +"<p>"+ myObj.events[i].description +"</p></div><br></div></div>";
-                                             }
-
-        }
-
-
-                document.getElementById("loadEvents").innerHTML = x;
-        }
-};
-xmlhttp.open("GET", "https://s3-us-west-1.amazonaws.com/zanproduction.org/eventsXported.json", true);
-xmlhttp.send();
-</script>
 
 	
 
-	
 
-		
- 	<div class="w3-panel w3-margin-25centLeft" onclick="location.href='AllEvents.html'">
-	 <h2 class="w3-right-align w3-teal w3 w3-hover-black w3-margin-25centLeft">View All Events <i class="fa fa-arrow-right"></i></h2>
+<!-- -------------------------------------------------------------------------------------------------------Highlight Content -->
 
+  <!-- The Band Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Compton Advocates</h2>
+    <p class="w3-opacity"><i>One Compton</i></p>
+    <p class="w3-justify">
+	  Based in Compton, “Compton Advocates” is an organization which encourages action and unity through educating and empowering its residents. Candace, a proud Compton resident, runs its Instagram page, which is a powerful resource that informs about food giveaways, town halls, small businesses, and any event concerning the city of Compton – no piece of knowledge is too trivial. Compton Advocates thrives to “change the negative narratives that have existed for far too long in Compton…to unite black and brown.” To achieve this, it is empirical to educate the Compton community and empower its residents to become advocates themselves, FOR themselves, and for the greater good of Compton.
+	  
+	</p>
+    
+	  
+	  
+<!-- ------------------------------------------------------------------------------------------------------------------------Higlight Pic Row -->	  
+	  
+	<div class="w3-row w3-padding-32">
+      <div class="w3-half">
+        <p>Peace Walk</p>
+        <img src="../img/ComptonPeaceWalk.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:80%">
+      </div>
+      <div class="w3-half">
+        <p>Compton Shop</p>
+        <img src="../img/ComptonShops.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:80%">
+      </div>
     </div>
-
-
-
-</div>
-
-
-<!-- ---------------------------------------------------------------------------------------------------------------------------Partial Programs Container -->
-  <hr>
-<div class="w3-container w3-padding-64 w3-theme-l5" id="program">
-    <div class="w3-container" style="position:relative">
-    <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Programs</b></h1>
-    </div>
-
-<p id="programs"></p>
-
-
-<script>
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-                var prog = JSON.parse(this.responseText);
-
-                var x="<ul class='w3-ul w3-card-4 w3-white' >";
-                for (i in prog.programs)
-                {
-
-
-                           x+=" <li class='w3-bar'> <div class='w3-bar-item w3-margin-bottom'>";
-                           x+="<span class='w3-large'><b>" + prog.programs[i].title +"</b></span><br>";
-                           x+="<span>"+ prog.programs[i].time +"</span><br><br>";
-                           x+="<span>"+ prog.programs[i].description +"</span>";
-                           x+="</div></li>";
-
-
-
-        }//End checking of input length
-              x+="</ul>";
-
-                document.getElementById("programs").innerHTML = x;
-        }
-};
-xmlhttp.open("GET", "https://zanproduction.org/basicprograms.json", true);
-xmlhttp.send();
-</script>
-
- 	<div class="w3-panel w3-margin-25centLeft" onclick="location.href='AllEvents.html'">
-	 <h2 class="w3-right-align w3-teal w3 w3-hover-black w3-margin-25centLeft">View All Programs <i class="fa fa-arrow-right"></i></h2>
-
-    </div>
-
-</div>
-
-
-
-<!-- -------------------------------------------------------------------------------------------------------Go to more events Button Container -->
-
-<!-- ------------------------------------------------------------------------------------------------------------------------------Contact Row -->
-<hr>
-<div class="w3-row-padding w3-center w3-padding-64 w3-mobile" id="contact">
-         <div class="w3-container" style="position:relative">
-    <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Contact Us</b></h1>
-    </div>
-
-
-
-
-
-  <div class="w3-bar w3-black w3-margin-bottom w3-mobile">
-    <button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'Con')">Questions?</button>
-    <button class="w3-bar-item w3-button tablink " onclick="openCity(event,'Event')">Reach Community</button>
-    <!--<button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Program')">Submit Program</button>-->
-
   </div>
-
-  
-
-
-
-<!-- -----------------------------------------------------------------Submit Inquiry -->
-  <div id="Con" class="w3-container city PAZ-margin-18-LR PAZ-animate-fading" >
-
-  <script type="text/javascript">var submitted=false;</script>
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='index.html#contact';}"></iframe>
-
-<!--<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='index.html#contact';}"></iframe>-->
-
-  <form id="cform" class="w3-container w3-card-4" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfyJtyNnHhSbW4LIv55I1xpf301ikOAQBgVJiVOtoX2EVAl6g/formResponse" method="post" target="hidden_iframe"
-    onsubmit="submitted=true;">
-      <h2 class="w3-text-blue">Say Hello</h2>
-      <p>Feel free to send us a message with any comments and/or questions. </p>
-
-      <p><label for="email" class="w3-text-blue w3-left"><b>Email:</b></label>
-      <input id="email" class="w3-input w3-border" name="emailAddress" type="email" required></p>
-
-      <p><label for="cq" class="w3-text-blue w3-left"><b>Comment or Question: </b></label>
-      <textarea id="cq" class="w3-input w3-border" name="entry.947592968" type="text" required></textarea></p>
-
-      <p><button class="w3-btn w3-blue" onclick="sendNresetEnter()">Ask Away!</button></p>
-  </form>
-
-
-
-
-  </div>
-</div>
-
-<!-- ---------------------------------------------------------------------------------------------------------------------------Donate Container -->
-  <hr>
-<div class="w3-container w3-center w3-padding-64 w3-theme-l5" id="doante">
-    <div class="w3-container" style="position:relative">
-    <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Donate</b></h1>
-    </div>
 	
-<div id="Don" class="w3-container city PAZ-margin-18-LR PAZ-animate-fading" >
-
-<h2>Help our cause</h2>
 	
-<p>If you would like to help our cause and donate to conitnue the development of the site, support local groups, and support our partners, feel free to donate.</p>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
- <p><button class="w3-btn w3-blue w3-xxlarge" onclick="">Donate!</button></p>
-
-  </div>
 
 
-</div>
+
+
 	
 <script>
 
@@ -358,8 +229,8 @@ function openCity(evt, cityName) {
 <!-- -------------------------------------------------------------------------------------------------------------------------------Footer -->
 <footer class="w3-container  w3-teal w3-center">
     <h4><u>Coming Soon</u></h4>
-    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img src="img/download-on-the-app-store-apple.svg"  class="w3-button" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
-    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img src="img/google-play-download-android-app.svg" class="w3-button" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img src="../img/download-on-the-app-store-apple.svg"  class="w3-button" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img src="../img/google-play-download-android-app.svg" class="w3-button" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
 
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noreferrer">w3.css</a></p>
 	<p class="w3-left"><a href="Privacy.html"> View our privacy statement</a></p>
