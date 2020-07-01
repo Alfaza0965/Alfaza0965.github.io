@@ -11,8 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     
-    
-    
     - name: Configure AWS Creds
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -21,9 +19,8 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
 
       
-    - name: Upload to S3 Bucket #Remove all the files
+    - name: Upload to S3 Bucket #Remove all the files & upload new ones
       run: aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET }} --exclude ".git/*" --exclude ".github/*" --delete
-#--exclude ".git/*" --exclude ".github/*" --delete
       
     - name: Invalidate CloudFront Cache
       run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_KEY_ID }} --paths "/*"
