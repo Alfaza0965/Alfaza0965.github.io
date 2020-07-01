@@ -9,8 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-	
+    - uses: actions/checkout@v1
 	
 	- name: Install npm
 	  run: npm install
@@ -18,25 +17,12 @@ jobs:
 	- name: Build Site
 	  run: npm run build
 	
-	
-	
-	
-    #- name: Setup Python
-	 # uses: actions/setup-python@v1
-	  #with:
-	  	#python-version: '3.x'
-		
-	#- name: Install AWS CommandLine Tools
-	 # run: pip3 install awscli --upgrade --user
-	
 	- name: Configure AWS Creds
 	  uses: aws-actions/configure-aws-credentials@v1
       with:
-        #args: --acl public-read --follow-symlinks --delete
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: ${{ secrets.AWS_REGION }}
-        #SOURCE_DIR: 'public'      # optional: defaults to entire repository
 		
 	- name: Upload to S3 Bucket
 	  run: aws s3 sync .s3//${{ secrets.AWS_S3_BUCKET }} --exclude ".git/*" --exclude ".github/*" --delete
