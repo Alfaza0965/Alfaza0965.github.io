@@ -164,12 +164,13 @@ xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
                 var prog = JSON.parse(this.responseText);
 
-                var x="<ul class='w3-ul w3-card-4 w3-white' >";
+				var x="<ul class='w3-ul w3-card-4 w3-white' >";
                 for (i in prog.programs)
                 {
 
 
-                           x+=" <li class='w3-bar'> <div class='w3-bar-item w3-margin-bottom'>";
+                           x+=" <li onclick='ShowInfo(" + prog.programs[i].title + "\) ' class='w3-bar PAZ-hover-Teal  '> <div class='w3-bar-item w3-margin-bottom w3-container'>";
+						   x+=" <img src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w80-h80' class='w3-border w3-left' alt='Norway'>  "
                            x+="<span class='w3-large'><b>" + prog.programs[i].title +"</b></span><br>";
                            x+="<span>"+ prog.programs[i].time +"</span><br><br>";
                            x+="<span>"+ prog.programs[i].description +"</span>";
@@ -180,11 +181,12 @@ xmlhttp.onreadystatechange = function() {
         }//End checking of input length
               x+="</ul>";
 
-                document.getElementById("programs").innerHTML = x;
+                document.getElementById("loadPrograms").innerHTML = x;
         }
 };
 xmlhttp.open("GET", "https://letmeknowzp.org/basicprograms.json", true);
 xmlhttp.send();
+	
 </script>
 
  	<div class="w3-panel w3-margin-25centLeft" onclick="location.href='AllEvents.html'">
@@ -384,6 +386,7 @@ function sendNresetEnter()
 
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noreferrer">w3.css</a></p>
 	<p class="w3-left"><a href="Privacy.html"> View our privacy statement</a></p>
+	<p class="w3-right">Powered by Zan Productions</p>
 
   <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
