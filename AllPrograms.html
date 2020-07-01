@@ -80,7 +80,7 @@ xmlhttp.onreadystatechange = function() {
                 {
 
 
-                           x+=" <li class='w3-bar'> <div class='w3-bar-item w3-margin-bottom w3-container'>";
+                           x+=" <li onclick='ShowInfo(" + prog.programs[i].title + "\) ' class='w3-bar PAZ-hover-Teal  '> <div class='w3-bar-item w3-margin-bottom w3-container'>";
 						   x+=" <img src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w80-h80' class='w3-border w3-left' alt='Norway'>  "
                            x+="<span class='w3-large'><b>" + prog.programs[i].title +"</b></span><br>";
                            x+="<span>"+ prog.programs[i].time +"</span><br><br>";
@@ -97,9 +97,34 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("GET", "https://letmeknowzp.org/basicprograms.json", true);
 xmlhttp.send();
+	
+	
+	
+	
+function ShowInfo(title){
+
+	var x ="";
+//document.getElementById(\"id01\").style.display=\"block\"
+	  x+= "<div class=\"w3-modal-content\">";
+      x+= "<div class=\"w3-container\">";
+      x+= "<span onclick=\"document.getElementById('id01').style.display='none'\" class=\"w3-button w3-display-topright\">&times;</span>";
+      x+= "<p>"+title+"</p>";
+      x+= "<p>Some text. Some text. Some text.</p>";
+      x+= "</div>";
+      x+= "</div>";
+
+	
+}
+
 </script>
 
-</div>
+	
+  <div id="id01" class="w3-modal">
+    </div>
+	
+	
+</div>	
+	
 
 
 
@@ -159,14 +184,11 @@ function filterEvents() {
         li = p.getElementsByTagName("li");
         for (i = 0; i < li.length; i++) {
                 h3 = li[i].getElementsByTagName("pf")[0];
-                //para = li[i].getElementsByTagName("pf2")[1];
+        
                 if (h3 ) {
                         txtValue = h3.textContent || h3.innerText;
-                        //txtValue2 = para.textContent || para.innerText;
-                        //if ((txtValue.toLowerCase().indexOf(filter) > -1) || txtValue2.toLowerCase().indexOf(filter) > -1 ) {
                         if ((txtValue.toLowerCase().indexOf(filter) > -1)) {
                             li[i].style.display = "";
-
                         }
                         else {
                                 li[i].style.display = "none";}
