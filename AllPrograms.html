@@ -105,13 +105,17 @@ function ShowInfo(title){
 
 	var x ="";
 //document.getElementById(\"id01\").style.display=\"block\"
+	  x+="<div id=\"moreInfo\" class=\"w3-modal\">";
+    
 	  x+= "<div class=\"w3-modal-content\">";
       x+= "<div class=\"w3-container\">";
       x+= "<span onclick=\"document.getElementById('id01').style.display='none'\" class=\"w3-button w3-display-topright\">&times;</span>";
       x+= "<p>"+title+"</p>";
       x+= "<p>Some text. Some text. Some text.</p>";
       x+= "</div>";
-      x+= "</div>";
+      x+= "</div></div>";
+	
+	
 
 	
 }
@@ -119,8 +123,7 @@ function ShowInfo(title){
 </script>
 
 	
-  <div id="id01" class="w3-modal">
-    </div>
+
 	
 	
 </div>	
