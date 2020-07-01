@@ -48,7 +48,7 @@
 
 <!-- --------------------------------------------------------------------------------------------------------Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-    <img src="https://www.w3schools.com//w3images/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
+    <img data-src="https://www.w3schools.com//w3images/sailboat.jpg" alt="boat" class="lazyload" style="width:100%;min-height:350px;max-height:600px;">
     <div class="w3-container w3-display-bottomleft w3-margin-bottom w3-opacity-min w3-purple w3-mobile">
     <h2>Let Me Know</h2>
     <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
@@ -236,7 +236,7 @@ xmlhttp.send();
                             x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
                                     +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
                                     
-									+"<img src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:50%'>"
+									+"<img data-src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "' class='lazyload' style='width:50%'>"
                                 	+"<p>"+ myObj.events[i].date +"</p>"    
 									+"<p>"+ myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd +"</p>"
                                     +"<p><a>"+ myObj.events[i].address +"</a></p>"
@@ -271,8 +271,8 @@ xmlhttp.send();
 <!-- -------------------------------------------------------------------------------------------------------------------------------Footer -->
 <footer class="w3-container  w3-teal w3-center">
     <h4><u>Coming Soon</u></h4>
-    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img src="img/download-on-the-app-store-apple.svg"  class="w3-button" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
-    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img src="img/google-play-download-android-app.svg" class="w3-button" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img data-src="img/download-on-the-app-store-apple.svg"  class="w3-button lazyload" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img data-src="img/google-play-download-android-app.svg" class="w3-button lazyload" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
 
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noreferrer">w3.css</a></p>
 	<p class="w3-left"><a href="Privacy.html"> View our privacy statement</a></p>
@@ -411,5 +411,10 @@ function filterEventsByDropDownCity(city) {
 </script>
 
 
+	
+	
+  <script src="/js/lazysizes.min.js" async></script>
+  <!-- Images End -->
+</body>
 </body>
 </html>
