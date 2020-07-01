@@ -12,9 +12,9 @@ jobs:
     - uses: actions/checkout@v1
     
     - name: Setup Python and AWS CLI
-     uses: actions/setup-python@v1
-     with:
-       python version: '3.x'
+      uses: actions/setup-python@v1
+      with:
+        python version: '3.x'
      run: pip3 install awscli --upgrade --user
     
     - name: Configure AWS Creds
