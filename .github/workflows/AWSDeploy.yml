@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     
-    -name: Setup Python and AWS CLI
+    - name: Setup Python and AWS CLI
      uses: actions/setup-python@v1
      with:
        python version: '3.x'
@@ -33,4 +33,4 @@ jobs:
     - name: Invalidate CloudFront Cache
       run: aws cloudfront create-invalidation -- distribution-id ${{ secrets.AWS_CLOUDFRONT_KEY_ID }} --paths "/*"
       
-
+x
