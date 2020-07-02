@@ -2,16 +2,7 @@
 <html lang="en">
 <title>Let Me Know-Coronavirus Response</title>
 <head>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME87R2ZFZ6"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-ME87R2ZFZ6');
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script data-ad-client="ca-pub-1134374927268143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script type = "text/javascript">
@@ -21,11 +12,12 @@
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 *1000));
     var expires = "expires=" + d;
 
-//    document.cookie = "cookieConsent=" +"; " + expires;
+    //document.cookie = "cookieConsent=1" +"; " + expires;
     document.cookie = "SameSite=None;Secure" + expires;
     document.cookie = "promo_shown=1;" + expires;
 
-//    checkCookie();
+    //checkCookie();
+    //checkCookie();
 
 
 
@@ -43,15 +35,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body id="myPage" onload="checkCookie()">
+<body id="myPage">
 
+	
+<!-- -----------------------------------------------------------------------------------------------------------Check Cookie/Disclaimer -->
+
+<!--	
 <div id="cookiesConsent" class="w3-hide w3-card w3-mobile PanelFloat" style="width:35%">
     <div class="w3-modal-content w3-card-4 w3-animate-bottom">
         <header class="w3-container w3-teal">
             <span onclick="document.getElementById('cookiesConsent').style.display='none'" class="w3-button w3-teal w3-display-topmiddle w3-margin-right w3-margin-right"><i class="fa fa-remove"></i></span>
             <h4>Cookies Consent </h4>
         </header>
-        <div class="w3-content  w3-tiny pazOverflow w3-padding">
+        
+		
+		<div class="w3-content  w3-tiny pazOverflow w3-padding">
             <p>Let Me Know and Let Me Know CoronaVirus Response's website stores data such as<br> cookies to enable important site functionality including analytics, targeting, and <br>personalization. Data Storage Policy</p>
             <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
             <button class="w3-btn w3-black" onclick="Agree2Cookies()">Accept Cookies!</button>
@@ -59,7 +57,16 @@
     </div>
 
 </div>
-
+	-->
+  <div id="cookiesConsent" class="w3-hide w3-modal ">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>Some text. Some text. Some text.</p>
+        <p>Some text. Some text. Some text.</p>
+      </div>
+    </div>
+  </div>
 
 
 <!-- -----------------------------------------------------------------------------------------------------------Navbar(Menu) -->
@@ -82,7 +89,7 @@
 
 <!-- --------------------------------------------------------------------------------------------------------Image Header -->
 <div class="w3-display-container w3-animate-opacity w3-mobile w3-hidden">
-    <img data-src="https://www.w3schools.com//w3images/sailboat.jpg" alt="boat" class="lazyload" style="width:100%;min-height:350px;max-height:600px;">
+    <img data-src="img/website-banner-v2-la.png" alt="boat" class="lazyload" style="width:100%;min-height:350px;max-height:600px;">
     <div class="w3-container w3-display-bottomleft w3-margin-bottom w3-opacity-min w3-purple w3">
     <h2>Let Me Know</h2>
     <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
@@ -309,7 +316,7 @@ xmlhttp.send();
 	
 <script>
 
-
+checkCookie();
 
 function Agree2Cookies()
 {
@@ -323,9 +330,10 @@ function Agree2Cookies()
 
 
 function checkCookie() {
-
+console.log("About to ashow cookie");
       var cookieConsent = "cookieConsent";
       var cookshown = getCookie(cookieConsent);
+	//console.log(cookshown);
       var element = document.getElementById("cookiesConsent");
       if(cookshown != "Nope" || cookshown == "undefined" || cookshown == null)
       {
@@ -336,6 +344,7 @@ function checkCookie() {
 // returns the cookie with the given name,
 // or undefined if not found
 function getCookie(name) {
+	console.log("checking cookies...");
   let matches = document.cookie.match(new RegExp(
     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
   ));
@@ -423,7 +432,7 @@ function openNav() {
 
 
 
-<script src="/js/lazysizes.min.js" async></script>
+<script src="js/lazysizes.min.js" async></script>
 	<!-- https://web.dev/codelab-use-lazysizes-to-lazyload-images/ -->
 </body>
 </html>
