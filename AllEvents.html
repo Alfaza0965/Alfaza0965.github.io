@@ -69,8 +69,15 @@
 <body>
 <!-- --------------------------------------------------------------------------------------------------------Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-    <img data-src="https://www.w3schools.com//w3images/sailboat.jpg" alt="boat" class="lazyload" style="width:100%;min-height:350px;max-height:600px;">
-    <div class="w3-container w3-display-bottomleft w3-margin-bottom w3-opacity-min w3-purple w3-mobile">
+    <img data-src="img/website-banner-v2-2.png" alt="website-banner-v2-2.png" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
+	<img data-src="img/website-banner-v2.png" alt="boat" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
+	<img data-src="img/website-banner-v2-la.png" alt="boat" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
+    
+    
+	
+	
+	
+	<div class="w3-container w3-display-bottomleft w3-margin-bottom w3-opacity-min w3-purple w3-mobile">
     <h2>Let Me Know</h2>
     <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
     that is meant to help community members become aware of free services and resources that community leaders are providing as well
@@ -79,7 +86,7 @@
     </div>
 </div>
 
-	
+<!--	
 <div class="w3-content" style="max-width:400px">
   <div class="BannerSlides w3-container w3-red">
     <h1><b>Did You Know?</b></h1>
@@ -105,7 +112,7 @@
   <img class="BannerSlides" src="img_manarola.jpg" style="width:100%">
 </div>	
 	
-
+-->
 	
 <script>
 var slideIndex = 0;
@@ -306,7 +313,7 @@ xmlhttp.send();
 							z+="<div class='w3-center w3-hover-shadow w3-card w3-white PAZ-margin-slick-sides w3-row-padding pazOverflow' style='min-height:669px'>"
                                     +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
                                     
-									+"<img class='PAZcenterImg' src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:50%; float:center;'>"
+									+"<img class='PAZcenterImg' src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:50%>"
                                 	+"<p>"+ myObj.events[i].date +"</p>"    
 									+"<p>"+ myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd +"</p>"
                                     +"<p><a>"+ myObj.events[i].address +"</a></p>"
