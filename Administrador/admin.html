@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<title>LMK-Admin</title>
+<head>
+<meta charset="UTF-8">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME87R2ZFZ6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ME87R2ZFZ6');
+
+
+
+</script>
+<script data-ad-client="ca-pub-1134374927268143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="site2.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+
+
+<!-- -----------------------------------------------------------------------------------------------------------Navbar(Menu) -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button "><i class="fa fa-home w3-margin-right"></i>Home</a>
+            <a href="AllEvents.html" class="w3-bar-item w3-button w3-hide-small w3-teal w3-hover-white">All Events</a>
+            <a href="AllPrograms.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Programs</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+        <a><input type="text" class="w3-right" id="myInput" onkeyup="filterEvents()" placeholder= "Search in Events..." title="Search for an event"></a>
+ </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+        <a href="AllEvents.html" class="w3-bar-item w3-button">All Events</a>
+        <a href="AllPrograms.html" class="w3-bar-item w3-button">All Programs</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+</div>
+<body>
+<!-- --------------------------------------------------------------------------------------------------------Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+    <img data-src="img/website-banner-v2-2.png" alt="website-banner-v2-2.png" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
+	<img data-src="img/website-banner-v2.png" alt="boat" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
+	<img data-src="img/website-banner-v2-la.png" alt="boat" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
+
+
+</div>
+
+<div class="w3-container w3-margin-bottom w3-opacity-min w3-purple w3">
+ <h2>Let Me Know</h2>
+ <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
+ that is meant to help community members become aware of free services and resources that community leaders are providing as well
+ as being a central point for the many resources in your community.</p>
+
+ </div><br>
+
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("BannerSlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 5000);
+}
+</script>
+
+
+<!-- -----------------------------------------------------------------------------------Page Title Row -->
+<!--
+<div class="w3-container w3-row-padding w3-padding-64 w3-margin-top" style="position:relative">
+    <h1 class="w3-jumbo w3-text-red w3-shadow w3-row-padding w3-padding-64 w3-margin-top" style="position:absolute;top:-116px;left:24px"><b>Events</b></h1>
+</div>
+-->
+<div class="w3-row-padding w3-center w3-padding-64 w3-mobile" id="Events">
+         <div class="w3-container" style="position:relative">
+    <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Advertisement Packages</b></h1>
+    </div>
+</div>
+
+<!-- -----------------------------------------------------------------------------------Events Row -->
+<hr>
+<div class="w3-row-padding w3-padding-64 w3-margin-top w3-center" id="work">
+
+
+<p id="laoding">
+	Give us a few seconds while we load the data...
+
+	<lottie-player class = "w3-center"  src="https://assets7.lottiefiles.com/packages/lf20_gwBIWJ.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; text-align: center;margin-left: auto;
+    margin-right: auto;"  loop  autoplay></lottie-player>
+
+</p>
+
+<p id="loadEvents"></p>
+
+
+
+
+</div>
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------Footer -->
+<footer class="w3-container  w3-teal w3-center">
+    <h4><u>Coming Soon</u></h4>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img data-src="img/download-on-the-app-store-apple.svg"  class="w3-button lazyload" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img data-src="img/google-play-download-android-app.svg" class="w3-button lazyload" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
+
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noreferrer">w3.css</a></p>
+	<p class="w3-left"><a href="Privacy.html"> View our privacy statement</a></p>
+	<p class="w3-right">Powered by Zan Productions</p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+
+</footer>
+
+
+
+
+
+<script src="js/lazysizes.min.js" async></script>
+</body>
+</body>
+</html>

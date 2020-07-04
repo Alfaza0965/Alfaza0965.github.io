@@ -149,7 +149,7 @@ body { font-family: sans-serif; }
 
 .carousel-cell {
   width: 66%;
-  min-height: 669px;
+  min-height: 469px;
   margin-right: 10px;
   background: #8C8;
   border-radius: 5px;
@@ -161,7 +161,7 @@ body { font-family: sans-serif; }
   display: block;
   text-align: center;
   content: counter(gallery-cell);
-  line-height: 200px;
+  line-height: 400px;
   font-size: 80px;
   color: white;
 }

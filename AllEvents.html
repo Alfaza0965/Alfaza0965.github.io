@@ -75,7 +75,7 @@
 
 
 
-
+<!--
 	<div class="w3-container w3-display-bottomleft w3-margin-bottom w3-opacity-min w3-purple w3-mobile">
     <h2>Let Me Know</h2>
     <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
@@ -83,7 +83,17 @@
     as being a central point for the many resources in your community.</p>
 
     </div>
+  -->
 </div>
+
+<div class="w3-container w3-margin-bottom w3-opacity-min w3-purple w3">
+ <h2>Let Me Know</h2>
+ <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
+ that is meant to help community members become aware of free services and resources that community leaders are providing as well
+ as being a central point for the many resources in your community.</p>
+
+ </div><br>
+
 
 <!--
 <div class="w3-content" style="max-width:400px">
@@ -157,7 +167,7 @@ function carousel() {
 -->
 <div class="w3-row-padding w3-center w3-padding-64 w3-mobile" id="Events">
          <div class="w3-container" style="position:relative">
-    <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Events</b></h1>
+    <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>All Events</b></h1>
     </div>
 </div>
 
@@ -290,31 +300,23 @@ var flkty = new Flickity( elem, {
                 {
 
                             x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
-                                    +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
-
-									+"<img data-src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "' class='lazyload' style='width:50%'>"
-                                	+"<p>"+ myObj.events[i].date +"</p>"
-									+"<p>"+ myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd +"</p>"
-                                    +"<p><a>"+ myObj.events[i].address +"</a></p>"
-                                    +"<p>"+ myObj.events[i].description +"</p>"
-									+"<p><b>Tags: </b>"+ myObj.events[i].eventHashTag +"<p>"
-									+"<p class ='w3-hide'><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf><p>"
-
-
-									+"</div><br></div>";
+                             +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
+                             +"<img data-src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "' class='lazyload' style='width:50%'>"
+                             +"<p>"+ myObj.events[i].date +"</p>"
+									           +"<p>"+ myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd +"</p>"
+                             +"<p><a>"+ myObj.events[i].address +"</a></p>"
+                             +"<p>"+ myObj.events[i].description +"</p>"
+									           +"<p><b>Tags: </b>"+ myObj.events[i].eventHashTag +"<p>"
+									           +"<p class ='w3-hide'><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf><p>"
+									           +"</div><br></div>";
 
 
 
-							z+="<div class='carousel-cell container js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style=''>"
-               +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
-							 +"<img class='PAZcenterImg' src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:50%>"
-            	 +"<p>"+ myObj.events[i].date +"</p>"
-							 +"<p>"+ myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd +"</p>"
-               +"<p><a>"+ myObj.events[i].address +"</a></p>"
-               +"<p>"+ myObj.events[i].description +"</p>"
-							 +"<p><b>Tags: </b>"+ myObj.events[i].eventHashTag +"<p>"
-							 +"<p class ='w3-hide'><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf><p>"
-							 +"</div>";
+            							z+="<div class='carousel-cell js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow'>"
+                           +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
+            							 +"<img class='PAZcenterImg' src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:50%>"
+            							 +"<p class ='w3-hide'>"+"" +myObj.events[i].name + "<br>"+myObj.events[i].date +"<br>"+myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd+"<br>"+myObj.events[i].address+"<br>"+ myObj.events[i].description + "<p><br>"
+            							 +"</div>";
 
 
 
@@ -327,7 +329,6 @@ var flkty = new Flickity( elem, {
 					}
 				document.getElementById("loadEvents").innerHTML = x;
 				document.getElementById("citiesdd").innerHTML = y;
-				document.getElementById("laoding").style.display="none";
 			//	z+="</div>";
 				document.getElementById("ThisWeek").innerHTML = z;
 
