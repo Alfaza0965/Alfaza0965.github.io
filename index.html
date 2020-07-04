@@ -2,20 +2,9 @@
 <html lang="en">
 <title>Let Me Know-Coronavirus Response</title>
 <head>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME87R2ZFZ6"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-ME87R2ZFZ6');
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script data-ad-client="ca-pub-1134374927268143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-
 <script type = "text/javascript">
 
     var d = new Date();
@@ -23,11 +12,12 @@
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 *1000));
     var expires = "expires=" + d;
 
-//    document.cookie = "cookieConsent=" +"; " + expires;
+    //document.cookie = "cookieConsent=1" +"; " + expires;
     document.cookie = "SameSite=None;Secure" + expires;
     document.cookie = "promo_shown=1;" + expires;
 
-//    checkCookie();
+    //checkCookie();
+    //checkCookie();
 
 
 
@@ -45,15 +35,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body id="myPage" onload="checkCookie()">
+<body id="myPage">
 
+	
+<!-- -----------------------------------------------------------------------------------------------------------Check Cookie/Disclaimer -->
+
+<!--	
 <div id="cookiesConsent" class="w3-hide w3-card w3-mobile PanelFloat" style="width:35%">
     <div class="w3-modal-content w3-card-4 w3-animate-bottom">
         <header class="w3-container w3-teal">
             <span onclick="document.getElementById('cookiesConsent').style.display='none'" class="w3-button w3-teal w3-display-topmiddle w3-margin-right w3-margin-right"><i class="fa fa-remove"></i></span>
             <h4>Cookies Consent </h4>
         </header>
-        <div class="w3-content  w3-tiny pazOverflow w3-padding">
+        
+		
+		<div class="w3-content  w3-tiny pazOverflow w3-padding">
             <p>Let Me Know and Let Me Know CoronaVirus Response's website stores data such as<br> cookies to enable important site functionality including analytics, targeting, and <br>personalization. Data Storage Policy</p>
             <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
             <button class="w3-btn w3-black" onclick="Agree2Cookies()">Accept Cookies!</button>
@@ -61,7 +57,16 @@
     </div>
 
 </div>
-
+	-->
+  <div id="cookiesConsent" class="w3-hide w3-modal ">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p>Some text. Some text. Some text.</p>
+        <p>Some text. Some text. Some text.</p>
+      </div>
+    </div>
+  </div>
 
 
 <!-- -----------------------------------------------------------------------------------------------------------Navbar(Menu) -->
@@ -84,16 +89,19 @@
 
 <!-- --------------------------------------------------------------------------------------------------------Image Header -->
 <div class="w3-display-container w3-animate-opacity w3-mobile w3-hidden">
-    <img src="https://www.w3schools.com//w3images/sailboat.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
-    <div class="w3-container w3-display-bottomleft w3-margin-bottom w3-opacity-min w3-purple w3">
+    <img data-src="img/website-banner-v2-la3.png" alt="boat" class="lazyload" style="width:100%;max-height:600px;">
+
+</div>
+
+	
+   <div class="w3-container w3-margin-bottom w3-opacity-min w3-purple w3">
     <h2>Let Me Know</h2>
     <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
     that is meant to help community members become aware of free services and resources that community leaders are providing as well
     as being a central point for the many resources in your community.</p>
 
-    </div>
-</div>
-
+    </div><br>
+	
 <!-- -----------------------------------------------------------------------------------Partial Events Row -->
 <hr>
 <div class="w3-row-padding w3-padding-64 w3-margin-top" id="work">
@@ -116,7 +124,7 @@ xmlhttp.onreadystatechange = function() {
                             x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
                                     +"<h3> <a href='#'>"+myObj.events[i].name + "</a></h3>"
                                     
-									+"<img src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:70%'>"
+									+"<img data-src='" + myObj.events[i].picLink + "' class='lazyload' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:70%'>"
                                     +"<p>"+ myObj.events[i].timeStart +"</p>"
                                     +"<p>"+ myObj.events[i].date +"</p>"
                                     +"<p><a>"+ myObj.events[i].address +"</a></p>"
@@ -155,7 +163,7 @@ xmlhttp.send();
     <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Programs</b></h1>
     </div>
 
-<p id="programs"></p>
+<p id="loadPrograms"></p>
 
 
 <script>
@@ -164,12 +172,13 @@ xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
                 var prog = JSON.parse(this.responseText);
 
-                var x="<ul class='w3-ul w3-card-4 w3-white' >";
+				var x="<ul class='w3-ul w3-card-4 w3-white' >";
                 for (i in prog.programs)
                 {
 
 
-                           x+=" <li class='w3-bar'> <div class='w3-bar-item w3-margin-bottom'>";
+                           x+=" <li onclick='ShowInfo(hello"+ ")' class='w3-bar PAZ-hover-Teal  '> <div class='w3-bar-item w3-margin-bottom w3-container'>";
+						   x+=" <img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w80-h80' class='w3-border w3-left lazyload' alt='Norway'>  "
                            x+="<span class='w3-large'><b>" + prog.programs[i].title +"</b></span><br>";
                            x+="<span>"+ prog.programs[i].time +"</span><br><br>";
                            x+="<span>"+ prog.programs[i].description +"</span>";
@@ -180,14 +189,15 @@ xmlhttp.onreadystatechange = function() {
         }//End checking of input length
               x+="</ul>";
 
-                document.getElementById("programs").innerHTML = x;
+                document.getElementById("loadPrograms").innerHTML = x;
         }
 };
-xmlhttp.open("GET", "https://letmeknowzp.org/basicprograms.json", true);
+xmlhttp.open("GET", "basicprograms.json", true);
 xmlhttp.send();
+	
 </script>
 
- 	<div class="w3-panel w3-margin-25centLeft" onclick="location.href='AllEvents.html'">
+ 	<div class="w3-panel w3-margin-25centLeft" onclick="location.href='AllPrograms.html'">
 	 <h2 class="w3-right-align w3-teal w3 w3-hover-purple w3-margin-25centLeft">View All Programs <i class="fa fa-arrow-right"></i></h2>
 
     </div>
@@ -309,7 +319,7 @@ xmlhttp.send();
 	
 <script>
 
-
+checkCookie();
 
 function Agree2Cookies()
 {
@@ -323,9 +333,10 @@ function Agree2Cookies()
 
 
 function checkCookie() {
-
+console.log("About to ashow cookie");
       var cookieConsent = "cookieConsent";
       var cookshown = getCookie(cookieConsent);
+	//console.log(cookshown);
       var element = document.getElementById("cookiesConsent");
       if(cookshown != "Nope" || cookshown == "undefined" || cookshown == null)
       {
@@ -336,6 +347,7 @@ function checkCookie() {
 // returns the cookie with the given name,
 // or undefined if not found
 function getCookie(name) {
+	console.log("checking cookies...");
   let matches = document.cookie.match(new RegExp(
     "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
   ));
@@ -379,11 +391,12 @@ function sendNresetEnter()
 <!-- -------------------------------------------------------------------------------------------------------------------------------Footer -->
 <footer class="w3-container  w3-teal w3-center">
     <h4><u>Coming Soon</u></h4>
-    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img src="img/download-on-the-app-store-apple.svg"  class="w3-button" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
-    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img src="img/google-play-download-android-app.svg" class="w3-button" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img data-src="img/download-on-the-app-store-apple.svg"  class="w3-button lazyload" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img data-src="img/google-play-download-android-app.svg" class="w3-button lazyload" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
 
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noreferrer">w3.css</a></p>
 	<p class="w3-left"><a href="Privacy.html"> View our privacy statement</a></p>
+	<p class="w3-right">Powered by Zan Productions</p>
 
   <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
@@ -422,6 +435,7 @@ function openNav() {
 
 
 
-
+<script src="js/lazysizes.min.js" async></script>
+	<!-- https://web.dev/codelab-use-lazysizes-to-lazyload-images/ -->
 </body>
 </html>

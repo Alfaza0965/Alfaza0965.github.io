@@ -10,8 +10,11 @@
     gtag('js', new Date());
 
     gtag('config', 'G-ME87R2ZFZ6');
-</script>
+	
+	
 
+</script>
+	<script data-ad-client="ca-pub-1134374927268143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 	
@@ -80,11 +83,13 @@ xmlhttp.onreadystatechange = function() {
                 {
 
 
-                           x+=" <li onclick='ShowInfo(" + prog.programs[i].title + "\) ' class='w3-bar PAZ-hover-Teal  '> <div class='w3-bar-item w3-margin-bottom w3-container'>";
-						   x+=" <img src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w80-h80' class='w3-border w3-left' alt='Norway'>  "
-                           x+="<span class='w3-large'><b>" + prog.programs[i].title +"</b></span><br>";
-                           x+="<span>"+ prog.programs[i].time +"</span><br><br>";
-                           x+="<span>"+ prog.programs[i].description +"</span>";
+                           x+=" <li onclick=\"ShowInfo(\'"
+							   + prog.programs[i].title  + "\',\'"
+							   + prog.programs[i].description+
+							   "\')\" class='w3-bar PAZ-hover-Teal w3-center'> <div class='w3-bar-item w3-margin-bottom w3-container w3-center'>";
+						   x+=" <img src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w120-h120' class='w3-border w3-left' alt='Norway'>  "
+                           x+="<span class='w3-large w3-center'><b class='w3-center'>" + prog.programs[i].title +"</b></span><br>";
+                          
                            x+="</div></li>";
 
 
@@ -95,24 +100,28 @@ xmlhttp.onreadystatechange = function() {
                 document.getElementById("loadPrograms").innerHTML = x;
         }
 };
-xmlhttp.open("GET", "https://letmeknowzp.org/basicprograms.json", true);
+xmlhttp.open("GET", "basicprograms.json", true);
 xmlhttp.send();
 	
 	
 	
 	
-function ShowInfo(title){
+function ShowInfo(title, des){
 
 	var x ="";
-//document.getElementById(\"id01\").style.display=\"block\"
-	  x+= "<div class=\"w3-modal-content\">";
-      x+= "<div class=\"w3-container\">";
-      x+= "<span onclick=\"document.getElementById('id01').style.display='none'\" class=\"w3-button w3-display-topright\">&times;</span>";
-      x+= "<p>"+title+"</p>";
-      x+= "<p>Some text. Some text. Some text.</p>";
+//
+	 x+= "<div class='w3-modal-content w3-center'><div class='w3-container'>";
+      x+= "<span onclick='document.getElementById(\"id01\").style.display=\"none\" ' class='w3-button w3-display-topright'>&times;</span>";
+      x+= "<img src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w500-h500' class='w3-border' alt='Norway'>";
+	  x+= "<p>"+title+"</p>";
+      x+= "<p>"+des+"</p>";
       x+= "</div>";
-      x+= "</div>";
-
+      x+= "</div></div>";
+	
+	document.getElementById('id01').style.display='block';
+	document.getElementById('id01').innerHTML = x;
+	
+	//console.log(x);
 	
 }
 
@@ -120,8 +129,8 @@ function ShowInfo(title){
 
 	
   <div id="id01" class="w3-modal">
-    </div>
-	
+    
+  </div>
 	
 </div>	
 	
@@ -135,6 +144,8 @@ function ShowInfo(title){
     <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img src="img/google-play-download-android-app.svg" class="w3-button" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
 
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" rel="noreferrer">w3.css</a></p>
+	<p class="w3-left"><a href="Privacy.html"> View our privacy statement</a></p>
+	<p class="w3-right">Powered by Zan Productions</p>
 
   <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
