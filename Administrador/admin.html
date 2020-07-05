@@ -22,7 +22,7 @@
 </head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="site2.css">
+<link rel="stylesheet" href="../site2.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body id="myPage">
@@ -49,9 +49,9 @@
 <body>
 <!-- --------------------------------------------------------------------------------------------------------Image Header -->
 <div class="w3-display-container w3-animate-opacity">
-    <img data-src="img/website-banner-v2-2.png" alt="website-banner-v2-2.png" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
-	<img data-src="img/website-banner-v2.png" alt="boat" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
-	<img data-src="img/website-banner-v2-la.png" alt="boat" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
+    <img data-src="../img/website-banner-v2-2.png" alt="website-banner-v2-2.png" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
+	<img data-src="../img/website-banner-v2.png" alt="boat" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
+	<img data-src="../img/website-banner-v2-la.png" alt="boat" class="lazyload BannerSlides" style="width:100%;min-height:350px;max-height:600px;">
 
 
 </div>
@@ -90,26 +90,24 @@ function carousel() {
 -->
 <div class="w3-row-padding w3-center w3-padding-64 w3-mobile" id="Events">
          <div class="w3-container" style="position:relative">
-    <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Advertisement Packages</b></h1>
+    <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Admin Center</b></h1>
     </div>
 </div>
 
-<!-- -----------------------------------------------------------------------------------Events Row -->
+<!-------------------------------------------------------------------------------------Events Row -->
 <hr>
 <div class="w3-row-padding w3-padding-64 w3-margin-top w3-center" id="work">
-
-
-<p id="laoding">
-	Give us a few seconds while we load the data...
-
-	<lottie-player class = "w3-center"  src="https://assets7.lottiefiles.com/packages/lf20_gwBIWJ.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; text-align: center;margin-left: auto;
-    margin-right: auto;"  loop  autoplay></lottie-player>
-
-</p>
-
-<p id="loadEvents"></p>
-
-
+  <div class="w3-card w3-container" style="min-height:460px">
+    <h3>Admin Submission</h3><br>
+    <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+    <p>Please have ready the email you registered with along with your Access Key. <br>
+      These events will be automatically shown on the site on the next refresh period.
+    </p>
+    <p class = "w3-padding w3-center w3-margin-right ">
+      <button class="w3-btn w3-blue w3-mobile w3-margin" onclick="window.open('https://forms.gle/iJah4E5JroqKkczF6'); ">Submit an Event</button>
+      <button class="w3-btn w3-blue w3-mobile w3-margin" onclick="window.open('https://forms.gle/T3WJpDw8R5nBqXEw6'); ">Submit a Program</button>
+    </p>
+  </div>
 
 
 </div>

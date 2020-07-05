@@ -153,9 +153,6 @@ function carousel() {
 	<!-- Flickity HTML init -->
 <div class="main-carousel "  id="ThisWeek">
   <div class="carousel-cell"></div>
-<div class="carousel-cell"></div>
-<div class="carousel-cell"></div>
-<div class="carousel-cell"></div>
 </div>
 
 
@@ -313,9 +310,9 @@ var flkty = new Flickity( elem, {
 
 
             							z+="<div class='carousel-cell js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow'>"
-                           +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
+                           +"<h3> <a>"+myObj.events[i].name + "<br><b>" +myObj.events[i].date +"</b></a></h3>"
             							 +"<img class='PAZcenterImg' src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:50%>"
-            							 +"<p class ='w3-hide'>"+"" +myObj.events[i].name + "<br>"+myObj.events[i].date +"<br>"+myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd+"<br>"+myObj.events[i].address+"<br>"+ myObj.events[i].description + "<p><br>"
+            							 +"<p class ='w3-hide'>"+"" +myObj.events[i].name + "<br>"+myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd+"<br>"+myObj.events[i].address+"<br>"+ myObj.events[i].description + "<p><br>"
             							 +"</div>";
 
 
@@ -331,6 +328,7 @@ var flkty = new Flickity( elem, {
 				document.getElementById("citiesdd").innerHTML = y;
 			//	z+="</div>";
 				document.getElementById("ThisWeek").innerHTML = z;
+        document.getElementById("laoding").style.display = "none";
 
         }
 
