@@ -319,11 +319,6 @@ document.getElementById("carousel-load").style.display = "none";
 
 
 
-            							z+="<div class='carousel-cell js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow'>"
-                           +"<h3> <a>"+myObj.events[i].name + "<br><b>" +myObj.events[i].date +"</b></a></h3>"
-            							 +"<img class='PAZcenterImg' src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:50%>"
-            							 +"<p class ='w3-hide'>"+"" +myObj.events[i].name + "<br>"+myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd+"<br>"+myObj.events[i].address+"<br>"+ myObj.events[i].description + "<p><br>"
-            							 +"</div>";
 
 
 
@@ -334,6 +329,16 @@ document.getElementById("carousel-load").style.display = "none";
 					{
 						y+="<a onclick='filterEventsByDropDownCity(&quot;" +myObj.cities[j].city+"&quot;)' class='w3-bar-item w3-button'>"+ myObj.cities[j].city+"</a>";
 					}
+
+          for(k in myObj.ThisWeekEvents)
+            {
+              z+="<div class='carousel-cell js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow'>"
+               +"<h3> <a>"+myObj.events[k].name + "<br><b>" +myObj.events[k].date +"</b></a></h3>"
+               +"<img class='PAZcenterImg' src='" + myObj.events[k].picLink + "' alt='Event Screenshot " + myObj.events[k].name+ "'style='width:50%>"
+               +"<p class ='w3-hide'>"+"" +myObj.events[k].name + "<br>"+myObj.events[k].timeStart +"-"+ myObj.events[k].timeEnd+"<br>"+myObj.events[k].address+"<br>"+ myObj.events[k].description + "<p><br>"
+               +"</div>";
+
+            }
 				document.getElementById("loadEvents").innerHTML = x;
 				document.getElementById("citiesdd").innerHTML = y;
 			//	z+="</div>";
