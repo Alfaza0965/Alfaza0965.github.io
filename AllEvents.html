@@ -152,7 +152,15 @@ function carousel() {
 
 	<!-- Flickity HTML init -->
 <div class="main-carousel "  id="ThisWeek">
-  <div class="carousel-cell"></div>
+  <div id="carousel-load">
+    Give us a few seconds while we load the data...
+
+  	<lottie-player class = "w3-center"  src="https://assets7.lottiefiles.com/packages/lf20_gwBIWJ.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; text-align: center;margin-left: auto;
+      margin-right: auto;"  loop  autoplay></lottie-player>
+
+
+
+  </div>
 </div>
 
 
@@ -254,7 +262,8 @@ xmlhttp.onreadystatechange = function() {
 
         }
 };
-xmlhttp.open("GET", "https://s3-us-west-1.amazonaws.com/zanproduction.org/eventsXported.json", true);
+//xmlhttp.open("GET", "https://s3-us-west-1.amazonaws.com/zanproduction.org/eventsXported.json", true);
+xmlhttp.open("GET", "eventsXported.json", true);
 xmlhttp.send();
 
 
@@ -280,6 +289,7 @@ var flkty = new Flickity( elem, {
   cellAlign: 'left',
   contain: true
 });
+document.getElementById("carousel-load").style.display = "none";
 
 }
 
