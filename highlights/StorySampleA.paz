@@ -3,15 +3,15 @@
 <title>Let Me Know-Coronavirus Response</title>
 <head>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ME87R2ZFZ6"></script>
-<script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3BWXTCCVJ"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-ME87R2ZFZ6');
-</script>
+    gtag('config', 'G-C3BWXTCCVJ');
+  </script>
 
 
 <script type = "text/javascript">
@@ -93,7 +93,7 @@
 </div>
 
 
-	
+
 
 
 <!-- -------------------------------------------------------------------------------------------------------Highlight Content -->
@@ -104,13 +104,13 @@
     <p class="w3-opacity"><i>One Compton</i></p>
     <p class="w3-justify">
 	  Based in Compton, “Compton Advocates” is an organization which encourages action and unity through educating and empowering its residents. Candace, a proud Compton resident, runs its Instagram page, which is a powerful resource that informs about food giveaways, town halls, small businesses, and any event concerning the city of Compton – no piece of knowledge is too trivial. Compton Advocates thrives to “change the negative narratives that have existed for far too long in Compton…to unite black and brown.” To achieve this, it is empirical to educate the Compton community and empower its residents to become advocates themselves, FOR themselves, and for the greater good of Compton.
-	  
+
 	</p>
-    
-	  
-	  
-<!-- ------------------------------------------------------------------------------------------------------------------------Higlight Pic Row -->	  
-	  
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------------------------Higlight Pic Row -->
+
 	<div class="w3-row w3-padding-32">
       <div class="w3-half">
         <p>Peace Walk</p>
@@ -122,23 +122,23 @@
       </div>
     </div>
   </div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 
 
 
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
 
 
@@ -242,8 +242,8 @@ function openCity(evt, cityName) {
   </div>
 
 </footer>
-	
-	
+
+
 
 <script>
 // Script for side navigation
