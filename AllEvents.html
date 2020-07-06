@@ -333,9 +333,9 @@ document.getElementById("carousel-load").style.display = "none";
           for(k in myObj.ThisWeekEvents)
             {
               z+="<div class='carousel-cell js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow'>"
-               +"<h3> <a>"+myObj.events[k].name + "<br><b>" +myObj.events[k].date +"</b></a></h3>"
-               +"<img class='PAZcenterImg' src='" + myObj.events[k].picLink + "' alt='Event Screenshot " + myObj.events[k].name+ "'style='width:50%>"
-               +"<p class ='w3-hide'>"+"" +myObj.events[k].name + "<br>"+myObj.events[k].timeStart +"-"+ myObj.events[k].timeEnd+"<br>"+myObj.events[k].address+"<br>"+ myObj.events[k].description + "<p><br>"
+               +"<h3> <a>"+myObj.ThisWeekEvents[k].name + "<br><b>" +myObj.ThisWeekEvents[k].date +"</b></a></h3>"
+               +"<img class='PAZcenterImg' src='" + myObj.ThisWeekEvents[k].picLink + "' alt='Event Screenshot " + myObj.ThisWeekEvents[k].name+ "'style='width:50%>"
+               +"<p class ='w3-hide'>"+"" +myObj.ThisWeekEvents[k].name + "<br>"+myObj.ThisWeekEvents[k].timeStart +"-"+ myObj.ThisWeekEvents[k].timeEnd+"<br>"+myObj.ThisWeekEvents[k].address+"<br>"+ myObj.ThisWeekEvents[k].description + "<p><br>"
                +"</div>";
 
             }
