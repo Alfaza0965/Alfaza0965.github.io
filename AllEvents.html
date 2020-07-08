@@ -263,7 +263,7 @@ xmlhttp.onreadystatechange = function() {
         }
 };
 //xmlhttp.open("GET", "https://s3-us-west-1.amazonaws.com/zanproduction.org/eventsXported.json", true);
-xmlhttp.open("GET", "eventsXported.json", true);
+xmlhttp.open("GET", "https://live.letmeknowzp.org/eventsXported.json", true);
 xmlhttp.send();
 
 
@@ -332,10 +332,10 @@ document.getElementById("carousel-load").style.display = "none";
 
           for(k in myObj.ThisWeekEvents)
             {
-              z+="<div class='carousel-cell js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow'>"
+              z+="<div class='carousel-cell js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-sand w3-container pazOverflow' style='width:40%'>"
                +"<h3> <a>"+myObj.ThisWeekEvents[k].name + "<br><b>" +myObj.ThisWeekEvents[k].date +"</b></a></h3>"
-               +"<img class='PAZcenterImg' src='" + myObj.ThisWeekEvents[k].picLink + "' alt='Event Screenshot " + myObj.ThisWeekEvents[k].name+ "'style='width:50%>"
-               +"<p class ='w3-hide'>"+"" +myObj.ThisWeekEvents[k].name + "<br>"+myObj.ThisWeekEvents[k].timeStart +"-"+ myObj.ThisWeekEvents[k].timeEnd+"<br>"+myObj.ThisWeekEvents[k].address+"<br>"+ myObj.ThisWeekEvents[k].description + "<p><br>"
+               +"<img class='PAZcenterImg' src='" + myObj.ThisWeekEvents[k].picLink + "' alt='Event Screenshot " + myObj.ThisWeekEvents[k].name+ "'style='width:50%'>"
+               +"<p class =''>"+"" +myObj.ThisWeekEvents[k].name + "<br>"+myObj.ThisWeekEvents[k].timeStart +"-"+ myObj.ThisWeekEvents[k].timeEnd+"<br>"+myObj.ThisWeekEvents[k].address+"<br>"+ myObj.ThisWeekEvents[k].description + "<p><br>"
                +"</div>";
 
             }
