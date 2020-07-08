@@ -87,14 +87,14 @@
  <div class="w3-bar w3-black w3-left-align">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
-            <a href="AllEvents.html#loadEvents" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Events</a>
+            <a href="AllEvents.html#ThisWeek" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Events</a>
             <a href="AllPrograms.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Programs</a>
         <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
  </div>
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
-        <a href="AllEvents.html#loadEvents" class="w3-bar-item w3-button">All Events</a>
+        <a href="AllEvents.html#ThisWeek" class="w3-bar-item w3-button">All Events</a>
         <a href="AllPrograms.html" class="w3-bar-item w3-button">All Programs</a>
         <a href="index.html#contact" class="w3-bar-item w3-button">Contact</a>
     </div>
@@ -150,7 +150,7 @@ xmlhttp.onreadystatechange = function() {
                 document.getElementById("loadEvents").innerHTML = x;
         }
 };
-xmlhttp.open("GET", "eventsXported.json", true);
+xmlhttp.open("GET", "https://live.letmeknowzp.org/eventsXported.json", true);
 xmlhttp.send();
 </script>
 
@@ -193,7 +193,6 @@ xmlhttp.onreadystatechange = function() {
                            x+=" <li onclick='ShowInfo(hello"+ ")' class='w3-bar PAZ-hover-Teal  '> <div class='w3-bar-item w3-margin-bottom w3-container'>";
 						   x+=" <img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w80-h80' class='w3-border w3-left lazyload' alt='Norway'>  "
                            x+="<span class='w3-large'><b>" + prog.programs[i].title +"</b></span><br>";
-                           x+="<span>"+ prog.programs[i].time +"</span><br><br>";
                            x+="<span>"+ prog.programs[i].description +"</span>";
                            x+="</div></li>";
 

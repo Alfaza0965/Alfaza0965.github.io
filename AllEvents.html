@@ -52,7 +52,7 @@
  <div class="w3-bar w3-theme-d2 w3-left-align">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button "><i class="fa fa-home w3-margin-right"></i>Home</a>
-            <a href="AllEvents.html" class="w3-bar-item w3-button w3-hide-small w3-teal w3-hover-white">All Events</a>
+            <a href="AllEvents.html#ThisWeek" class="w3-bar-item w3-button w3-hide-small w3-teal w3-hover-white">All Events</a>
             <a href="AllPrograms.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Programs</a>
         <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
         <a><input type="text" class="w3-right" id="myInput" onkeyup="filterEvents()" placeholder= "Search in Events..." title="Search for an event"></a>
@@ -60,7 +60,7 @@
 
     <!-- Navbar on small screens -->
     <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-        <a href="AllEvents.html" class="w3-bar-item w3-button">All Events</a>
+        <a href="AllEvents.html#ThisWeek" class="w3-bar-item w3-button">All Events</a>
         <a href="AllPrograms.html" class="w3-bar-item w3-button">All Programs</a>
         <a href="index.html#contact" class="w3-bar-item w3-button">Contact</a>
     </div>
@@ -314,7 +314,7 @@ document.getElementById("carousel-load").style.display = "none";
                              +"<p><a>"+ myObj.events[i].address +"</a></p>"
                              +"<p>"+ myObj.events[i].description +"</p>"
 									           +"<p><b>Tags: </b>"+ myObj.events[i].eventHashTag +"<p>"
-									           +"<p class ='w3-hide'><b>Tags: </b><pf>"+ myObj.events[i].searchString +"</pf><p>"
+									           +"<p class ='w3-hide'><pf>"+ myObj.events[i].searchString +"</pf><p>"
 									           +"</div><br></div>";
 
 
