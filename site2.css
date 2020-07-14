@@ -262,6 +262,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .PAZ-margin-10centRight{margin-right:10%!important}
 .w3-margin-50centLeft{margin-left:50%!important}
 .PAZ-margin-18-LR{margin-left:17%!important; margin-right:17%!important}
+.PAZ-margin-6-LR{margin-left:6%!important; margin-right:6%!important}
 .PAZ-animate-fading{animation:fading 1s linear}@keyframes fading{0%{opacity:0}100%{opacity:1}}
 .PAZ-Titlemargins-Top{margin-top:-9%!important}
 .PAZ-hover-Teal:hover{opacity:0.60; color:#fff!important;background-color:#009688!important}
