@@ -233,7 +233,7 @@ xmlhttp.onreadystatechange = function() {
                 document.getElementById("loadPrograms").innerHTML = x;
         }
 };
-xmlhttp.open("GET", "basicprograms.json", true);
+xmlhttp.open("GET", "https://live.letmeknowzp.org/basicprograms.json", true);
 xmlhttp.send();
 
 </script>
@@ -272,7 +272,7 @@ xmlhttp.send();
    <div class="w3-container w3-card-4 w3-margin-right PAZ-margin-18-LR w3-padding w3-left-align">
         <h2 class="w3-text-blue w3-center">Reach out to your community</h2>
 
-        <p class = "w3-left"> Know of, or are you hosting an event that you would like your community to become aware of? <br>
+        <p > Know of, or are you hosting an event that you would like your community to become aware of? <br>
 		Want to share a community service event to help out your community during these unprecedented times? Have a digital class you want your community to become aware of?
             <br>
 		Sign in to your Google Account and submit a form with your event details.</p>
@@ -341,18 +341,26 @@ xmlhttp.send();
 
 <!-- ---------------------------------------------------------------------------------------------------------------------------Donate Container -->
   <hr>
-<div class="w3-container w3-center w3-padding-64 w3-theme-l5" id="doante">
+
+  <div class="w3-container" style="position:relative">
+  <h1 class="w3-jumbo w3-round w3-text-red w3-left-align" ><b>Donate</b></h1>
+  </div>
+
+<div class="w3-container w3-center w3-card-4 PAZ-margin-18-LR w3-padding-64 w3-theme-l5" id="doante">
+<!--
     <div class="w3-container" style="position:relative">
-    <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>Donate</b></h1>
+    <h1 class="w3-jumbo w3-round w3-text-red w3-left-align" ><b>Donate</b></h1>
     </div>
+-->
+
 
 <div id="Don" class="w3-container PAZ-margin-18-LR PAZ-animate-fading" >
 
 <h2>Help our cause</h2>
 
-<p>If you would like to help our cause and donate to conitnue the development of the site, support local groups, and support our partners, feel free to donate.</p>
+<p>Help our cause. If you would like to help our cause to centralize and share information and resources with the community please donate.  Feel free to donate so that we can continue the development of the site, support local groups, and support our partners.</p>
 
- <p><button class="w3-btn w3-blue w3-xxlarge" onclick="">Donate!</button></p>
+ <p><button class="w3-btn w3-round w3-blue w3-xxlarge" onclick="">Donate</button></p>
 
   </div>
 

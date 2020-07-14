@@ -57,7 +57,7 @@
 
 
    <div class="w3-container w3-margin-bottom w3-opacity-min w3-purple w3">
-    <h2>Let Me Know</h2>
+    <h2 onclick="document.getElementById('cookiesConsent').style.display='block'">Let Me Know</h2>
     <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> and <b>Let Me Know ZP</b> is a project under development
     that is meant to assist community members become aware of free services, resources, events and program that community leaders are providing as well
     as being a central point of information for your community.</p>
@@ -90,7 +90,7 @@ xmlhttp.onreadystatechange = function() {
 							   + prog.programs[i].title  + "\',\'"
 							   + prog.programs[i].description+
 							   "\')\" class='w3-bar PAZ-hover-Teal w3-center'> <div class='w3-bar-item w3-margin-bottom w3-container w3-center'>";
-						   x+=" <img src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w120-h120' class='w3-border w3-left' alt='Norway'>  "
+						   x+=" <img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w120-h120' class='lazyload w3-border w3-left' alt='Norway'>  "
                            x+="<span class='w3-large w3-center'><b class='w3-center'>" + prog.programs[i].title +"</b></span><br>";
 
                            x+="</div></li>";
@@ -115,7 +115,7 @@ function ShowInfo(title, des){
 //
 	 x+= "<div class='w3-modal-content w3-center'><div class='w3-container'>";
       x+= "<span onclick='document.getElementById(\"id01\").style.display=\"none\" ' class='w3-button w3-display-topright'>&times;</span>";
-      x+= "<img src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w500-h500' class='w3-border' alt='Norway'>";
+      x+= "<img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w500-h500' class='lazyload w3-border' alt='Norway'>";
 	  x+= "<p>"+title+"</p>";
       x+= "<p>"+des+"</p>";
       x+= "</div>";
@@ -143,8 +143,8 @@ function ShowInfo(title, des){
 <!-- -------------------------------------------------------------------------------------------------------------------------------Footer -->
 <footer class="w3-container  w3-teal w3-center">
     <h4><u>Coming Soon</u></h4>
-    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img src="img/download-on-the-app-store-apple.svg"  class="w3-button" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
-    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img src="img/google-play-download-android-app.svg" class="w3-button" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="lazyload w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img data-src="img/download-on-the-app-store-apple.svg"  class="w3-button" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="lazyload w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img data-src="img/google-play-download-android-app.svg" class="w3-button" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
 
 	<p class="w3-left"><a href="Privacy.html"> View our privacy statement</a></p>
 
@@ -211,6 +211,6 @@ function filterEvents() {
 }
 </script>
 
-
+<script src="js/lazysizes.min.js" async></script>
 </body>
 </html>
