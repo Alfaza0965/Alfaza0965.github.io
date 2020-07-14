@@ -1,8 +1,8 @@
 {
     "programs": [
     {
-                "id": "c00",
-                "title": "LB Schools Community Resource Guide ",
+                "id": "b99",
+                "title": "LB Schools Community Resource Guide",
                 "time": "4pm - 6pm",
                 "mobile": "310-632-1431",
                 "date": "May 8, 2020",
@@ -15,7 +15,7 @@
         },
        {
                 "id": "c00",
-                "title": "Meals for Seniors Program ",
+                "title": "Meals for Seniors Program",
                 "time": "4pm - 6pm",
                 "mobile": "310-632-1431",
                 "date": "May 8, 2020",
@@ -29,7 +29,7 @@
 
         {
                 "id": "c01",
-                "title": "Buddy to Buddy Program ",
+                "title": "Buddy to Buddy Program",
                 "time": "4pm - 6pm",
                 "mobile": "323-250-2340",
                 "date": "May 8, 2020",
@@ -56,12 +56,3 @@
 
     ]
 }
-
-
-
-
-
-
-
-
-

@@ -86,7 +86,7 @@ xmlhttp.onreadystatechange = function() {
                 {
 
 
-                           x+=" <li onclick=\"ShowInfo(\'"
+                  x+=" <li onclick=\"ShowInfo(\'"
 							   + prog.programs[i].title  + "\',\'"
 							   + prog.programs[i].description+
 							   "\')\" class='w3-bar PAZ-hover-Teal w3-center'> <div class='w3-bar-item w3-margin-bottom w3-container w3-center'>";
@@ -114,12 +114,12 @@ function ShowInfo(title, des){
 	var x ="";
 //
 	 x+= "<div class='w3-modal-content w3-center'><div class='w3-container'>";
-      x+= "<span onclick='document.getElementById(\"id01\").style.display=\"none\" ' class='w3-button w3-display-topright'>&times;</span>";
-      x+= "<img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w500-h500' class='lazyload w3-border' alt='Norway'>";
-	  x+= "<p>"+title+"</p>";
-      x+= "<p>"+des+"</p>";
-      x+= "</div>";
-      x+= "</div></div>";
+   x+= "<span onclick='document.getElementById(\"id01\").style.display=\"none\" ' class='w3-button w3-display-topright'>&times;</span>";
+   x+= "<img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w500-h500' class='lazyload w3-border' alt='Norway'>";
+	 x+= "<p>"+title+"</p>";
+   x+= "<p>"+des+"</p>";
+   x+= "</div>";
+   x+= "</div></div>";
 
 	document.getElementById('id01').style.display='block';
 	document.getElementById('id01').innerHTML = x;

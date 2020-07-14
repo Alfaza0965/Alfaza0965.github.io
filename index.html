@@ -219,11 +219,11 @@ xmlhttp.onreadystatechange = function() {
                 {
 
 
-                           x+=" <li onclick='ShowInfo(hello"+ ")' class='w3-bar PAZ-hover-Teal  '> <div class='w3-bar-item w3-margin-bottom w3-container'>";
-						   x+=" <img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w80-h80' class='w3-border w3-left lazyload' alt='Norway'>  "
-                           x+="<span class='w3-large'><b>" + prog.programs[i].title +"</b></span><br>";
-                           x+="<span>"+ prog.programs[i].description +"</span>";
-                           x+="</div></li>";
+                           x+=" <li onclick='ShowInfo(hello"+ ")' class='w3-bar PAZ-hover-Teal'> <div class='w3-bar-item w3-margin-bottom w3-container'>";
+						               x+=" <img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w160-h160' class=' w3-left lazyload PAZ-margin-10centRight' alt='Program picture'>";
+                           x+=" <p class='w3-large w3-justify'><b>" + prog.programs[i].title +"</b></p>";
+                           x+=" <p class='w3-justify'>"+ prog.programs[i].description +"</p>";
+                           x+=" </div></li>";
 
 
 
@@ -261,13 +261,32 @@ xmlhttp.send();
 
 
   <div class="w3-bar w3-black w3-margin-bottom w3-mobile">
-    <button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'Con')">Questions?</button>
-    <button class="w3-bar-item w3-button tablink " onclick="openCity(event,'Eve')">Reach Community</button>
+    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'ConTab')">Questions?</button>
+    <button class="w3-bar-item w3-button tablink " onclick="openCity(event,'EveTab')">Reach Community</button>
     <!--<button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Program')">Submit Program</button>-->
+
+
+
+    <script>
+  		function openCity(evt, cityName) {
+  		  var i, x, tablinks;
+  		  x = document.getElementsByClassName("city");
+  		  for (i = 0; i < x.length; i++) {
+  			x[i].style.display = "none";
+  		  }
+  		  tablinks = document.getElementsByClassName("tablink");
+  		  for (i = 0; i < x.length; i++) {
+  			tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  		  }
+  		  document.getElementById(cityName).style.display = "block";
+  		  evt.currentTarget.className += " w3-red";
+  		}
+  	</script>
+
 
   </div>
 
-  <div id="Eve" class="w3-container city PAZ-animate-fading w3-mobile" style="display:none">
+  <div id="EveTab" class="w3-container PAZ-animate-fading w3-mobile city" style="display:none">
 <!-- -----------------------------------------------------------------Submit Event -->
    <div class="w3-container w3-card-4 w3-margin-right PAZ-margin-18-LR w3-padding w3-left-align">
         <h2 class="w3-text-blue w3-center">Reach out to your community</h2>
@@ -293,7 +312,7 @@ xmlhttp.send();
 
 
 <!-- -----------------------------------------------------------------Submit Inquiry -->
-  <div id="Con" class="w3-container city PAZ-margin-18-LR PAZ-animate-fading" >
+  <div id="ConTab" class="w3-container PAZ-margin-18-LR PAZ-animate-fading city" >
 
   <script type="text/javascript">var submitted=false;</script>
 <!--
@@ -320,21 +339,7 @@ xmlhttp.send();
 
   </div>
 
-	<script>
-		function openCity(evt, cityName) {
-		  var i, x, tablinks;
-		  x = document.getElementsByClassName("city");
-		  for (i = 0; i < x.length; i++) {
-			x[i].style.display = "none";
-		  }
-		  tablinks = document.getElementsByClassName("tablink");
-		  for (i = 0; i < x.length; i++) {
-			tablinks[i].className = tablinks[i].className.replace(" w3-teal", "");
-		  }
-		  document.getElementById(cityName).style.display = "block";
-		  evt.currentTarget.className += " w3-teal";
-		}
-	</script>
+
 
 
 </div>
@@ -358,7 +363,9 @@ xmlhttp.send();
 
 <h2>Help our cause</h2>
 
-<p>Help our cause. If you would like to help our cause to centralize and share information and resources with the community please donate.  Feel free to donate so that we can continue the development of the site, support local groups, and support our partners.</p>
+<p>If you would like to help our cause to centralize and share information and resources with the community please donate.
+</br></br>
+  Feel free to donate so that we can continue the development of the site, support local groups, and support our partners.</p>
 
  <p><button class="w3-btn w3-round w3-blue w3-xxlarge" onclick="">Donate</button></p>
 
@@ -439,15 +446,16 @@ function sendNresetEnter()
     <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img data-src="img/download-on-the-app-store-apple.svg"  class="w3-button lazyload" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
     <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img data-src="img/google-play-download-android-app.svg" class="w3-button lazyload" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
 
-	<p class="w3-left-align ">
-    LetMeKnowZP and LetMeKnow do not host or sponsor events, programs, or resources listed on this site. Remember to always be safe while participating in any of these events. By visiting and browsing this site, you are in an agreement of understanding that WE will not be held responsible for the accuracy of the information presented on this site.
-    Always be safe and proceed with caution when attening and being part of the events, programs and resources mentioned on this site.
-    Please see our <a href="Privacy.html"> Privacy Statement</a></p>
 
   <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
     <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
     <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
     <i class="fa fa-chevron-circle-up"></i></span></a>
+
+    <p class="w3-left-align ">
+      LetMeKnowZP and LetMeKnow do not host or sponsor events, programs, or resources listed on this site. Remember to always be safe while participating in any of these events. By visiting and browsing this site, you are in an agreement of understanding that WE will not be held responsible for the accuracy of the information presented on this site.
+      Always be safe and proceed with caution when attening and being part of the events, programs and resources mentioned on this site.
+      Please see our <a href="Privacy.html"> Privacy Statement</a></p>
 
   </div>
 
