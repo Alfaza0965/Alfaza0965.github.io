@@ -13,28 +13,6 @@
    gtag('config', 'G-C3BWXTCCVJ');
  </script>
 
-
-<script type = "text/javascript">
-
-   var d = new Date();
-   var exdays = 120;
-   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 *1000));
-   var expires = "expires=" + d;
-
-//    document.cookie = "cookieConsent=" +"; " + expires;
-   document.cookie = "SameSite=None;Secure" + expires;
-   document.cookie = "promo_shown=1;" + expires;
-
-//    checkCookie();
-
-
-
-
-
-</script>
-
-
-
 <link rel="stylesheet" type="text/css" href="../slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="../slick/slick-theme.css"/>
 
@@ -48,24 +26,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<body id="myPage" onload="checkCookie()">
-
-<div id="cookiesConsent" class="w3-hide w3-card w3-mobile PanelFloat" style="width:35%">
-   <div class="w3-modal-content w3-card-4 w3-animate-bottom">
-       <header class="w3-container w3-teal">
-           <span onclick="document.getElementById('cookiesConsent').style.display='none'" class="w3-button w3-teal w3-display-topmiddle w3-margin-right w3-margin-right"><i class="fa fa-remove"></i></span>
-           <h4>Cookies Consent </h4>
-       </header>
-       <div class="w3-content  w3-tiny pazOverflow w3-padding">
-           <p>Let Me Know and Let Me Know CoronaVirus Response's website stores data such as<br> cookies to enable important site functionality including analytics, targeting, and <br>personalization. Data Storage Policy</p>
-           <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
-           <button class="w3-btn w3-black" onclick="Agree2Cookies()">Accept Cookies!</button>
-       </div>
-   </div>
-
-</div>
-
-
+<body id="myPage">
 
 <!-- -----------------------------------------------------------------------------------------------------------Navbar(Menu) -->
 <div class="w3-top">
@@ -227,48 +188,6 @@ function showDivs(n) {
 </script>
 
 <script>
-
-
-
-function Agree2Cookies()
-{
-   var d = new Date();
-   var exdays = 120;
-   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 *1000));
-   var expires = "expires=" + d;
-   document.cookie = "cookieConsent=Nope" +"; " + expires;
-    document.getElementById('cookiesConsent').style.display='none';
-}
-
-
-function checkCookie() {
-
-     var cookieConsent = "cookieConsent";
-     var cookshown = getCookie(cookieConsent);
-     var element = document.getElementById("cookiesConsent");
-     if(cookshown != "Nope" || cookshown == "undefined" || cookshown == null)
-     {
-       //var element = document.getElementById("cookiesConsent");
-       element.classList.remove("w3-hide");
-//        element.classList.a
-         // document.getElementById('cookiesConsent').style.display='block';
-     }
-
-     //else{document.getElementById('cookiesConsent').style.display='block'}
-
-}
-
-// returns the cookie with the given name,
-// or undefined if not found
-function getCookie(name) {
- let matches = document.cookie.match(new RegExp(
-   "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
- ));
- return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-
-
-
 
 function sendNresetEnter()
 {
