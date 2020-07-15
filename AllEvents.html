@@ -68,32 +68,9 @@
 <body>
 <!-- --------------------------------------------------------------------------------------------------------Image Header -->
 <div class="w3-container w3-animate-right PAZ-margin-Highlight-Top">
-<!--
 
-	<img data-src="img/Design3-8.png" alt="website-banner-3-8.png" class="lazyload BannerSlides" style="width:100%;max-height:600px;">
--->
 <img data-src="img/Design5-8.png" alt="website-banner-5-8.png" class="lazyload BannerSlides" style="width:100%;max-height:600px;">
 
-<!-- Highlight x---------------------------------------
-  <div class="BannerSlides w3-display-container w3-mobile" style="width:100%;max-height:600px;">
-    <img data-src="img/Design2-8.png" alt="website-banner-3-8.png" class="lazyload" style="width:100%;max-height:600px;">
-
-    <div class=" w3-container">
-        <img data-src="img/MasteringHope.png" alt="Mastering Hope Logo" class="lazyload PAZ-margin-Highlight-Top w3-display-topright" style="width:30%;">
-      </div>
-
-      <div class="w3-display-bottommiddle w3-container w3-padding-16 w3-mobile w3-hide-small PAZ-Titlemargins-Top" style="width:100%;">
-          We would like to highlight <b>Mastering Hope</b> for their work with the community
-          <button class="w3-btn w3-round w3-blue w3-large w3-mobile"> <a href="highlights/highlight1.html" class="">View</a></button>
-      </div>
-
-      <div class="w3-display-bottommiddle w3-container w3-small w3-padding-16 w3-mobile w3-hide-large w3-hide-medium PAZ-Titlemargins-Top" style="width:100%;">
-          We would like to highlight <b>Mastering Hope</b> for their work with the community
-          <button class="w3-btn w3-round w3-blue w3-small"> <a href="highlights/highlight1.html" class="">View</a></button>
-      </div>
-
-  </div>
--->
   <!-- Highlight 1--------------------------------------->
     <div class="BannerSlides w3-display-container w3-mobile" style="width:100%;max-height:600px;">
       <img data-src="img/Design2-8.png" alt="website-banner-3-8.png" class="lazyload" style="width:100%;max-height:600px;">
@@ -157,58 +134,29 @@
 
 <div class="w3-container w3-margin-bottom w3-opacity-min w3-purple w3">
  <h2>Let Me Know</h2>
- <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> and <b>Let Me Know ZP</b> is a project under development
- that is meant to assist community members become aware of free services, resources, events and program that community leaders are providing as well
- as being a central point of information for your community.</p>
+ <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
+ that is meant to help community members become aware of free services and resources that community leaders are providing as well
+ as being a central point for the many resources in your community.</p>
 
 
  </div><br>
 
+ <script>
+ var slideIndex = 0;
+ carousel();
 
-<!--
-<div class="w3-content" style="max-width:400px">
-  <div class="BannerSlides w3-container w3-red">
-    <h1><b>Did You Know?</b></h1>
-    <h1><i>We plan to sell trips to the moon in the 2020s</i></h1>
-  </div>
-
-  <img class="BannerSlides" src="img_monterosso.jpg" style="width:100%">
-
-
-
-  <div class="BannerSlides w3-container w3-xlarge w3-white w3-card-4">
- <p><span class="w3-tag w3-teal">New!</span></p>
-    <p>PAZ Works Well!</p>
-    <p>Only $99 !!!</p>
-  </div>
-
-  <div class="BannerSlides w3-container w3-xlarge w3-white w3-card-4">
-<p><span class="w3-tag w3-yellow">New!</span></p>
-    <p>6 Crystal Glasses</p>
-    <p>Only $99 !!!</p>
-  </div>
-
-  <img class="BannerSlides" src="img_manarola.jpg" style="width:100%">
-</div>
-
--->
-
-<script>
-var slideIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("BannerSlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1}
-  x[slideIndex-1].style.display = "block";
-  setTimeout(carousel, 4000);
-}
-</script>
+ function carousel() {
+   var i;
+   var x = document.getElementsByClassName("BannerSlides");
+   for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+   }
+   slideIndex++;
+   if (slideIndex > x.length) {slideIndex = 1}
+   x[slideIndex-1].style.display = "block";
+   setTimeout(carousel, 4000);
+ }
+ </script>
 
 
 <!-- -----------------------------------------------------------------------------------Page Title Row -->
@@ -441,9 +389,10 @@ document.getElementById("carousel-load").style.display = "none";
   </div>
 
   <p class="w3-left-align ">
-    LetMeKnowZP and LetMeKnow do not host or sponsor events, programs, or resources listed on this site. Remember to always be safe while participating in any of these events. By visiting and browsing this site, you are in an agreement of understanding that WE will not be held responsible for the accuracy of the information presented on this site.
+    LetMeKnow do not host or sponsor events, programs, or resources listed on this site. Remember to always be safe while participating in any of these events. By visiting and browsing this site, you are in an agreement of understanding that WE will not be held responsible for the accuracy of the information presented on this site.
     Always be safe and proceed with caution when attening and being part of the events, programs and resources mentioned on this site.
     Please see our <a href="Privacy.html"> Privacy Statement</a></p>
+
 
 
 </footer>

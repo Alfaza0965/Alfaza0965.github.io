@@ -18,25 +18,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script data-ad-client="ca-pub-1134374927268143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script type = "text/javascript">
-
-    var d = new Date();
-    var exdays = 120;
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 *1000));
-    var expires = "expires=" + d;
-
-    //document.cookie = "cookieConsent=1" +"; " + expires;
-    document.cookie = "SameSite=None;Secure" + expires;
-    document.cookie = "promo_shown=1;" + expires;
-
-    //checkCookie();
-    //checkCookie();
-
-
-
-
-
-</script>
 
 </head>
 
@@ -53,63 +34,6 @@
 
 <!-- -----------------------------------------------------------------------------------------------------------Check Cookie/Disclaimer -->
 
-<!--
-<div id="cookiesConsent" class="w3-hide w3-card w3-mobile PanelFloat" style="width:35%">
-    <div class="w3-modal-content w3-card-4 w3-animate-bottom">
-        <header class="w3-container w3-teal">
-            <span onclick="document.getElementById('cookiesConsent').style.display='none'" class="w3-button w3-teal w3-display-topmiddle w3-margin-right w3-margin-right"><i class="fa fa-remove"></i></span>
-            <h4>Cookies Consent </h4>
-        </header>
-
-
-		<div class="w3-content  w3-tiny pazOverflow w3-padding">
-            <p>Let Me Know and Let Me Know CoronaVirus Response's website stores data such as<br> cookies to enable important site functionality including analytics, targeting, and <br>personalization. Data Storage Policy</p>
-            <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
-            <button class="w3-btn w3-black" onclick="Agree2Cookies()">Accept Cookies!</button>
-        </div>
-    </div>
-
-</div>
-	-->
-  <div id="cookiesConsent" class="w3-hide w3-modal ">
-    <div class="w3-modal-content">
-      <div class="w3-container ">
-        <span onclick="document.getElementById('cookiesConsent').style.display='none'" class="w3-button w3-red w3-display-topright">&times;</span>
-
-
-        <div class="w3-bar w3-black">
-          <button class="w3-bar-item w3-button tablink w3-red" onclick="userReview(event,'Cookies')">Cookies</button>
-          <button class="w3-bar-item w3-button tablink" onclick="userReview(event,'Disclaimer')">Disclaimer</button>
-        </div>
-
-        <div id="Cookies" class="w3-container option">
-          <h2>Cookies</h2>
-          <p>Let Me Know and LetMeKnowzp site may collects cookies for anay </p>
-        </div>
-
-        <div id="Disclaimer" class="w3-container option" style="display:none">
-          <h2>Disclaimer</h2>
-          <p>Paris is the capital of France.</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-      <script>
-      function userReview(evt, op) {
-        var i, x, tablinks;
-        x = document.getElementsByClassName("option");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < x.length; i++) {
-          tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
-        }
-        document.getElementById(op).style.display = "block";
-        evt.currentTarget.className += " w3-red";
-      }
-</script>
 
 <!-- -----------------------------------------------------------------------------------------------------------Navbar(Menu) -->
 <div class="w3-top">
@@ -138,9 +62,9 @@
 
    <div class="w3-container w3-margin-bottom w3-opacity-min w3-purple w3">
     <h2 onclick="document.getElementById('cookiesConsent').style.display='block'">Let Me Know</h2>
-    <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> and <b>Let Me Know ZP</b> is a project under development
-    that is meant to assist community members become aware of free services, resources, events and program that community leaders are providing as well
-    as being a central point of information for your community.</p>
+    <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
+    that is meant to help community members become aware of free services and resources that community leaders are providing as well
+    as being a central point for the many resources in your community.</p>
 
     </div><br>
 
@@ -218,12 +142,23 @@ xmlhttp.onreadystatechange = function() {
                 for (i in prog.programs)
                 {
 
-
+/*
                            x+=" <li onclick='ShowInfo(hello"+ ")' class='w3-bar PAZ-hover-Teal'> <div class='w3-bar-item w3-margin-bottom w3-container'>";
 						               x+=" <img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w160-h160' class=' w3-left lazyload PAZ-margin-10centRight' alt='Program picture'>";
                            x+=" <p class='w3-large w3-justify'><b>" + prog.programs[i].title +"</b></p>";
                            x+=" <p class='w3-justify'>"+ prog.programs[i].description +"</p>";
                            x+=" </div></li>";
+*/
+
+                    if(i <3){
+                          x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
+                            +"<h3> <a href='#'>"+ prog.programs[i].title + "</a></h3>"
+                            +"<img data-src='" + prog.programs[i].imagelink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>"
+                            +"<p>"+ prog.programs[i].date+"</p>"
+                            +"<p>"+ prog.programs[i].time +"</p>"
+                            +"<p><a>"+ prog.programs[i].address +"</a></p>"
+                            +"<p>"+ prog.programs[i].description +"</p></div><br></div></div>";
+                                     }
 
 
 
@@ -231,6 +166,7 @@ xmlhttp.onreadystatechange = function() {
               x+="</ul>";
 
                 document.getElementById("loadPrograms").innerHTML = x;
+            
         }
 };
 xmlhttp.open("GET", "https://live.letmeknowzp.org/basicprograms.json", true);
@@ -257,13 +193,10 @@ xmlhttp.send();
     </div>
 
 
-
-
-
   <div class="w3-bar w3-black w3-margin-bottom w3-mobile">
-    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'ConTab')">Questions?</button>
+    <button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'ConTab')">Questions?</button>
     <button class="w3-bar-item w3-button tablink " onclick="openCity(event,'EveTab')">Reach Community</button>
-    <!--<button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Program')">Submit Program</button>-->
+
 
 
 
@@ -276,10 +209,10 @@ xmlhttp.send();
   		  }
   		  tablinks = document.getElementsByClassName("tablink");
   		  for (i = 0; i < x.length; i++) {
-  			tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  			tablinks[i].className = tablinks[i].className.replace(" w3-teal", "");
   		  }
   		  document.getElementById(cityName).style.display = "block";
-  		  evt.currentTarget.className += " w3-red";
+  		  evt.currentTarget.className += " w3-teal";
   		}
   	</script>
 
@@ -303,8 +236,6 @@ xmlhttp.send();
           <button class="w3-btn w3-blue w3-mobile w3-margin" onclick="window.open('https://forms.gle/iJah4E5JroqKkczF6'); ">Submit an Event</button>
           <button class="w3-btn w3-blue w3-mobile w3-margin" onclick="window.open('https://forms.gle/T3WJpDw8R5nBqXEw6'); ">Submit a Program</button>
 			</p>
-
-
 
     </div>
    </div>
@@ -335,8 +266,6 @@ xmlhttp.send();
   </form>
 
 
-
-
   </div>
 
 
@@ -352,73 +281,17 @@ xmlhttp.send();
   </div>
 
 <div class="w3-container w3-center w3-card-4 PAZ-margin-18-LR w3-padding-64 w3-theme-l5" id="doante">
-<!--
-    <div class="w3-container" style="position:relative">
-    <h1 class="w3-jumbo w3-round w3-text-red w3-left-align" ><b>Donate</b></h1>
-    </div>
--->
-
 
 <div id="Don" class="w3-container PAZ-margin-18-LR PAZ-animate-fading" >
 
-<h2>Help our cause</h2>
-<p>Consider donating, if you would like to help our cause to centralize and share information and resources with the community, continue the development of the site, support local groups, and support our partners.</p>
- <p><button class="w3-btn w3-round w3-blue w3-xlarge" ><a href="https://givebutter.com/LMK" target="_blank">Donate</a></button></p>
-
-<!--5
-<p>If you would like to help our cause to centralize and share information and resources with the community please donate.
-</br></br>
-  Feel free to donate so that we can continue the development of the site, support local groups, and support our partners.</p>
-
- <p><button class="w3-btn w3-round w3-blue w3-xxlarge" onclick="">Donate</button></p>
--
-<iframe src="https://givebutter.com/embed/c/rNcTsP" width="100%" height="615px" style="max-width: 601px;" name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest></iframe><script src="https://givebutter.com/js/widget.js"></script>
--->
-
-  </div>
+  <h2>Help our cause</h2>
+  <p>Consider donating, if you would like to help our cause to centralize and share information and resources with the community, continue the development of the site, support local groups, and support our partners.</p>
+   <p><button class="w3-btn w3-round w3-blue w3-xlarge" ><a href="https://givebutter.com/LMK" target="_blank">Donate</a></button></p>
+</div>
 
 </div>
 
 <script>
-
-checkCookie();
-
-function Agree2Cookies()
-{
-    var d = new Date();
-    var exdays = 120;
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 *1000));
-    var expires = "expires=" + d;
-    document.cookie = "cookieConsent=Nope" +"; " + expires;
-     document.getElementById('cookiesConsent').style.display='none';
-}
-
-
-function checkCookie() {
-console.log("About to ashow cookie");
-      var cookieConsent = "cookieConsent";
-      var cookshown = getCookie(cookieConsent);
-	//console.log(cookshown);
-      var element = document.getElementById("cookiesConsent");
-      if(cookshown != "Nope" || cookshown == "undefined" || cookshown == null)
-      {
-        element.classList.remove("w3-hide");
-	  }
-}
-
-// returns the cookie with the given name,
-// or undefined if not found
-function getCookie(name) {
-	console.log("checking cookies...");
-  let matches = document.cookie.match(new RegExp(
-    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-  ));
-  return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-
-
-
-
 function sendNresetEnter()
 {
         document.getElementById('cq').addEventListener('keypress', function(event) {
@@ -430,10 +303,6 @@ function sendNresetEnter()
 
 
 }
-
-
-
-
 </script>
 
 
@@ -459,9 +328,10 @@ function sendNresetEnter()
   </div>
 
   <p class="w3-left-align ">
-    LetMeKnowZP and LetMeKnow do not host or sponsor events, programs, or resources listed on this site. Remember to always be safe while participating in any of these events. By visiting and browsing this site, you are in an agreement of understanding that WE will not be held responsible for the accuracy of the information presented on this site.
+    LetMeKnow do not host or sponsor events, programs, or resources listed on this site. Remember to always be safe while participating in any of these events. By visiting and browsing this site, you are in an agreement of understanding that WE will not be held responsible for the accuracy of the information presented on this site.
     Always be safe and proceed with caution when attening and being part of the events, programs and resources mentioned on this site.
-    Please see our <a href="Privacy.html"> Privacy Statement</a>
+    Please see our <a href="Privacy.html"> Privacy Statement</a></p>
+
   </p>
 
 
