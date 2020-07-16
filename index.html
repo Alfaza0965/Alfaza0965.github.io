@@ -166,7 +166,7 @@ xmlhttp.onreadystatechange = function() {
               x+="</ul>";
 
                 document.getElementById("loadPrograms").innerHTML = x;
-            
+
         }
 };
 xmlhttp.open("GET", "https://live.letmeknowzp.org/basicprograms.json", true);
@@ -251,7 +251,7 @@ xmlhttp.send();
 -->
 <!--<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='index.html#contact';}"></iframe>-->
 
-  <form id="cform" class="w3-container w3-card-4" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfyJtyNnHhSbW4LIv55I1xpf301ikOAQBgVJiVOtoX2EVAl6g/formResponse" method="post" target="hidden_iframe"
+  <form id="cform" class="w3-container w3-card-4" target="formDestination" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeciXWoB0rB8UUnnL4xv4l7uU1kcnlK0g123iIcjjjwZx2SAw/formResponse" method="post" target="hidden_iframe"
     onsubmit="submitted=true;">
       <h2 class="w3-text-blue">Say Hello</h2>
       <p>Feel free to send us a message with any comments and/or questions. </p>
@@ -260,12 +260,13 @@ xmlhttp.send();
       <input id="email" class="w3-input w3-border" name="emailAddress" type="email" required></p>
 
       <p><label for="cq" class="w3-text-blue w3-left"><b>Comment or Question: </b></label>
-      <textarea id="cq" class="w3-input w3-border" name="entry.947592968" type="text" required></textarea></p>
+      <textarea id="cq" class="w3-input w3-border" name="entry.1754437254" type="text" required></textarea></p>
 
       <p><button class="w3-btn w3-blue" onclick="sendNresetEnter()">Ask Away!</button></p>
   </form>
 
-
+<p id="emailConfirm" class="w3-text-red w3-hide">Email has been sent, we will contact you shortly.</p>
+<iframe class="w3-hide" name="formDestination"></iframe>
   </div>
 
 
@@ -289,19 +290,32 @@ xmlhttp.send();
    <p><button class="w3-btn w3-round w3-blue w3-xlarge" ><a href="https://givebutter.com/LMK" target="_blank">Donate</a></button></p>
 </div>
 
+
+
 </div>
 
 <script>
 function sendNresetEnter()
 {
-        document.getElementById('cq').addEventListener('keypress', function(event) {
-        if (event.keyCode == 13) {
-            document.getElementById("cform").submit();
-            document.getElementById("cform").reset();
-        }
-    });
 
+      document.getElementById("cform").submit();
+      //document.getElementById("cform").reset();
 
+      var x = document.getElementById("emailConfirm");
+          x.className = x.className.replace(" w3-hide", "");
+
+    //     document.getElementById('cq').addEventListener('keypress', function(event) {
+    //     if (event.keyCode == 13) {
+    //         document.getElementById("cform").submit();
+    //         document.getElementById("cform").reset();
+    //         x.className = x.className.replace(" w3-hide", "");
+    //     }
+    //
+    //     //
+    //
+    // });
+
+document.getElementById("cform").reset();
 }
 </script>
 
