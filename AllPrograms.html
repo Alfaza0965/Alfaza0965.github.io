@@ -176,10 +176,10 @@ xmlhttp.onreadystatechange = function() {
 */
 
               x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
-              +"<h3> <a href='#'>"+ prog.programs[i].title + "</a></h3>"
-              +"<img data-src='" + prog.programs[i].imagelink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>"
-              +"<p>"+ prog.programs[i].date+"</p>"
-              +"<p>"+ prog.programs[i].time +"</p>"
+              +"<h3> <a href='#'>"+ prog.programs[i].name + "</a></h3>"
+              +"<img data-src='" + prog.programs[i].picLink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>"
+              +"<p>"+ prog.programs[i].startdate+ " - "+ prog.programs[i].enddate +"</p>"
+              +"<p>"+ prog.programs[i].timeStart + "-" +  prog.programs[i].timeEnd +"</p>"
               +"<p><a>"+ prog.programs[i].address +"</a></p>"
               +"<p>"+ prog.programs[i].description +"</p></div><br></div></div>";
 
@@ -189,7 +189,7 @@ xmlhttp.onreadystatechange = function() {
                 document.getElementById("loadPrograms").innerHTML = x;
         }
 };
-xmlhttp.open("GET", "https://live.letmeknowzp.org/basicprograms.json", true);
+xmlhttp.open("GET", "https://live.letmeknowzp.org/programsXported.json", true);
 xmlhttp.send();
 
 
@@ -211,6 +211,17 @@ function ShowInfo(title, des){
 	document.getElementById('id01').innerHTML = x;
 
 	//console.log(x);
+
+}
+
+
+function parseProgram()
+{
+x="";
+
+
+return x;
+
 
 }
 
