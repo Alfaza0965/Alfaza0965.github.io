@@ -161,6 +161,8 @@ xmlhttp.onreadystatechange = function() {
 			//	var x="<ul class='w3-ul w3-card-4 w3-white' >";
                 for (i in prog.programs)
                 {
+                    x += parseProgram(prog, i);
+
 
 /*
                   x+=" <li onclick=\"ShowInfo(\'"
@@ -174,7 +176,7 @@ xmlhttp.onreadystatechange = function() {
 
 
 */
-
+/*
               x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
               +"<h3> <a href='#'>"+ prog.programs[i].name + "</a></h3>"
               +"<img data-src='" + prog.programs[i].picLink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>"
@@ -182,7 +184,7 @@ xmlhttp.onreadystatechange = function() {
               +"<p>"+ prog.programs[i].timeStart + "-" +  prog.programs[i].timeEnd +"</p>"
               +"<p><a>"+ prog.programs[i].address +"</a></p>"
               +"<p>"+ prog.programs[i].description +"</p></div><br></div></div>";
-
+*/
         }//End checking of input length
             //  x+="</ul>";
 
@@ -195,17 +197,106 @@ xmlhttp.send();
 
 
 
-function ShowInfo(title, des){
+function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, webl1name, webl2, webl2name, don1, don2, hash){
 
 	var x ="";
 //
 	 x+= "<div class='w3-modal-content w3-center'><div class='w3-container'>";
-   x+= "<span onclick='document.getElementById(\"id01\").style.display=\"none\" ' class='w3-button w3-display-topright'>&times;</span>";
-   x+= "<img data-src='https://drive.google.com/thumbnail?id=1kDkWxNed-TVCavoZbNPhHB9NRuRS34Bt&sz=w500-h500' class='lazyload w3-border' alt='Norway'>";
+   x+= "<span onclick='document.getElementById(\"id01\").style.display=\"none\" ' class='w3-button w3-red w3-display-topright'>&times;</span>";
+     x+= "<img  data-src=\'"+ img +" \' class='lazyload' alt='Image Logo Event' style='width:70%'>";
 	 x+= "<p>"+title+"</p>";
+   if(timeen == "PAZ")
+   {
+     x+="<p>"+ stdate +"</p>";
+   }
+   else
+   {
+     x+="<p>"+ stdate+ " - "+ endate +"</p>";
+   }
+
+/*
+   if(timest != "PAZ" || timeen !="PAZ" ||)
+     {
+       x+="<p>"+ prog.programs[i].timeStart + "-" +  prog.programs[i].timeEnd +"</p>";
+     }
+   if (prog.programs[i].timeStart == "PAZ" || prog.programs[i].timeEnd =="PAZ")
+   {
+     if(prog.programs[i].timeStart == "PAZ" && prog.programs[i].timeEnd !="PAZ" )
+     {
+       //x+="<p>"+ prog.programs[i].timeStart+"</p>";
+       x+="<p>"+ prog.programs[i].timeEnd +"</p>";
+     }
+     if (prog.programs[i].timeStart != "PAZ" && prog.programs[i].timeEnd =="PAZ" )
+     {
+         x+="<p>"+ prog.programs[i].timeStart +"</p>";
+     }
+*/
+   x+= "<p>"+timest +" - " + timeen +"</p>";
+  // x+= "<p>"+stdate +" - " + endate +"</p>";
+   x+= "<p>"+ addr +"</p>";
    x+= "<p>"+des+"</p>";
+
+   //webl1, webl1name
+   if (webl1 != "PAZ")
+   {
+     //Load the website links
+     x+= "<hr><div class=\"w3-content w3-display-container\">";
+     x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
+     x+="<p><a href=\"" + webl1 +" target=\"_blank\"> "+ webl1name +"</a></p> ";
+     x+="</div>";
+     if(webl2 == "PAZ"){
+       x+="</div>";
+     }
+     //x+=
+
+   }
+   if (webl2 != "PAZ")
+   {
+     x+= "<hr><div class=\"w3-content w3-display-container\">";
+     x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
+     x+= "<p><a href=\"" + webl2 +" target=\"_blank\"> "+ webl2name +"</a></p> ";
+     x+="</div>";
+     x+="</div>";
+
+   }
+   if (don1 != "PAZ")
+   {
+     x+= "<hr><div class=\"w3-content w3-display-container\">";
+     x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
+     x+= "<p><a class=\"w3-button w3-blue\" href=\"" +don1 +" target=\"_blank\"> Donate" +"</a></p> ";
+     x+="</div>";
+     if(don2 == "PAZ"){
+       x+="</div>";
+     }
+
+
+   }
+   if (don2 != "PAZ")
+   {
+     x+= "<hr><div class=\"w3-content w3-display-container\">";
+     x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
+     x+= "<p><a class=\"w3-button w3-blue\" href=\"" + don2 +" target=\"_blank\"> Donate" +"</a></p> ";
+     x+="</div>";
+     x+="</div>";
+
+
+   }
+
+
+   //Load the website links
+/*
+   x+= "<hr><div class=\"w3-content w3-display-container\">";
+   x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
+   x+="";
+   x+="</div>";
+*/
+
+
+   //Load the donation links
    x+= "</div>";
-   x+= "</div></div>";
+
+
+   x+= "</div></div></div>";
 
 	document.getElementById('id01').style.display='block';
 	document.getElementById('id01').innerHTML = x;
@@ -215,9 +306,85 @@ function ShowInfo(title, des){
 }
 
 
-function parseProgram()
+function parseProgram(prog, i)
 {
 x="";
+
+//title, timest, timeen, stdate, endate, addr, des, img, webl1, webl1name, webl2, webl2name, don1, don2, hash
+//"<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].description +"\',\'"+ prog.programs[i].picLink  + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
+x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
++"<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
++"<img  onclick=\"ShowInfo(\'"
++ prog.programs[i].name  + "\',\'"
++ prog.programs[i].description+
+"\')\" data-src='" + prog.programs[i].picLink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>";
+
+if(prog.programs[i].enddate == "PAZ")
+{
+  x+="<p>"+ prog.programs[i].startdate +"</p>";
+}
+else
+  {
+    x+="<p>"+ prog.programs[i].startdate+ " - "+ prog.programs[i].enddate +"</p>";
+  }
+if(prog.programs[i].timeStart != "PAZ" || prog.programs[i].timeEnd !="PAZ")
+  {
+    x+="<p>"+ prog.programs[i].timeStart + "-" +  prog.programs[i].timeEnd +"</p>";
+  }
+if (prog.programs[i].timeStart == "PAZ" || prog.programs[i].timeEnd =="PAZ")
+{
+  if(prog.programs[i].timeStart == "PAZ" && prog.programs[i].timeEnd !="PAZ" )
+  {
+    //x+="<p>"+ prog.programs[i].timeStart+"</p>";
+    x+="<p>"+ prog.programs[i].timeEnd +"</p>";
+  }
+  if (prog.programs[i].timeStart != "PAZ" && prog.programs[i].timeEnd =="PAZ" )
+  {
+      x+="<p>"+ prog.programs[i].timeStart +"</p>";
+  }
+  else {x+="";}
+}
+  /*
+  if (prog.programs[i].link1 != "PAZ")
+  {
+    x+= "<p><a href=\"" + prog.programs[i].link1 +" target=\"_blank\"> "+ prog.programs[i].link1name +"</a></p> ";
+
+  }
+  if (prog.programs[i].link1 != "PAZ")
+  {
+    x+= "<p><a href=\"" + prog.programs[i].link2 +" target=\"_blank\"> "+ prog.programs[i].link2name +"</a></p> ";
+
+  }
+  if (prog.programs[i].donatelink1 != "PAZ")
+  {
+    x+= "<p><a class=\"w3-button w3-blue\" href=\"" + prog.programs[i].donatelink1 +" target=\"_blank\"> Donate" +"</a></p> ";
+
+  }
+  if (prog.programs[i].donatelink2 != "PAZ")
+  {
+    x+= "<p><a class=\"w3-button w3-blue\" href=\"" + prog.programs[i].donatelink2 +" target=\"_blank\"> Donate" +"</a></p> ";
+
+  }
+
+  *?
+}
+
+x+="<p>"+ prog.programs[i].eventHashTag +"</p>";
+x+="<p class=\"w3-hide\"><pf>"+ prog.programs[i].searchString +"</pf></p>";
+/*
+
+
+
+
+
+
+
+
+*/
+x+="<p><a>"+ prog.programs[i].address +"</a></p>";
+x+="<p>"+ prog.programs[i].description +"</p>";
+
+x+="</div><br></div></div>";
 
 
 return x;
@@ -286,30 +453,59 @@ function openNav() {
 
 
 <script>
+var input, filter,div, p, li,pf, a, i, txtValue;
 
-var input, filter, p, li, a, i, txtValue;
 
 function filterEvents() {
     var elmnt = document.getElementById("loadPrograms");
         elmnt.scrollIntoView();
         input = document.getElementById("myInput");
-        filter = input.value.toLowerCase().split(' ');
-        p = document.getElementById("loadPrograms");
-        li = p.getElementsByTagName("li");
-        for (i = 0; i < li.length; i++) {
-                h3 = li[i].getElementsByTagName("pf")[0];
+        filter = input.value.toLowerCase();
+        div = document.getElementById("loadPrograms");
+         p = div.getElementsByTagName("div");
+        for (i = 0; i < p.length; i++) {
+                pf = p[i].getElementsByTagName("pf")[0];
+                if (pf) {
 
-                if (h3 ) {
-                        txtValue = h3.textContent || h3.innerText;
-                        if ((txtValue.toLowerCase().indexOf(filter) > -1)) {
-                            li[i].style.display = "";
+                        txtValue = pf.textContent || pf.innerText;
+                        if ((txtValue.toLowerCase().indexOf(filter) > -1) ) {
+                            p[i].style.display = "";
+
                         }
                         else {
-                                li[i].style.display = "none";}
+                                p[i].style.display = "none";}
 
         }
     }
 }
+
+
+/*
+var input, filter, div, pf, p, li, a, i, txtValue;
+
+function filterEvents() {
+    var elmnt = document.getElementById("loadPrograms");
+        elmnt.scrollIntoView();
+        input = document.getElementById("myInput");
+        filter = input.value.toLowerCase();
+        div = document.getElementById("loadPrograms");
+        p = p.getElementsByTagName("div");
+        for (i = 0; i < p.length; i++) {
+                pf = p[i].getElementsByTagName("pf")[0];
+
+                if (pf ) {
+                        txtValue = pf.textContent || pf.innerText;
+                        if ((txtValue.toLowerCase().indexOf(filter) > -1)) {
+                            p[i].style.display = "";
+                        }
+                        else {
+                                p[i].style.display = "none";}
+
+        }
+    }
+}
+
+*/
 </script>
 
 <script src="https://live.letmeknowzp.org/js/lazysizes.min.js" async></script>
