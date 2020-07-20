@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>All Programs</title>
+<title>Let Me Know -All Programs</title>
 <head>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -243,7 +243,7 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
      //Load the website links
      x+= "<div class=\"w3-content w3-display-container\">";
      x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
-     x+="<p><a href=\"" + webl1 +" target=\"_blank\"> "+ webl1name +"</a></p> ";
+     x+="<p><a href='" + webl1 +"' target=\"_blank\"> "+ webl1name +"</a></p> ";
      x+="</div>";
      if(webl2 == "PAZ"){
        x+="</div>";
@@ -253,9 +253,10 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
    }
    if (webl2 != "PAZ")
    {
+     var tmp = "google.com";
      x+= "<div class=\"w3-content w3-display-container\">";
      x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
-     x+= "<p><a href=\"" + webl2 +" target=\"_blank\"> "+ webl2name +"</a></p> ";
+     x+= "<p><a href='" + webl2 +"' target=\"_blank\"> "+ webl2name +"</a></p> ";
      x+="</div>";
      x+="</div>";
 
