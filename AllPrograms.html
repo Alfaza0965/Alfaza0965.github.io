@@ -203,8 +203,9 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
 //
 	 x+= "<div class='w3-modal-content w3-center'><div class='w3-container'>";
    x+= "<span onclick='document.getElementById(\"id01\").style.display=\"none\" ' class='w3-button w3-red w3-display-topright'>&times;</span>";
-     x+= "<img  data-src=\'"+ img +" \' class='lazyload' alt='Image Logo Event' style='width:70%'>";
-	 x+= "<p>"+title+"</p>";
+   x+= "<h2><b>"+title+"</b></h2>";
+   x+= "<img  data-src=\'"+ img +" \' class='lazyload' alt='Image Logo Event' style='width:70%'>";
+
    if(timeen == "PAZ")
    {
      x+="<p>"+ stdate +"</p>";
@@ -235,12 +236,12 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
   // x+= "<p>"+stdate +" - " + endate +"</p>";
    x+= "<p>"+ addr +"</p>";
    x+= "<p>"+des+"</p>";
-
+   x+= "<hr>";
    //webl1, webl1name
    if (webl1 != "PAZ")
    {
      //Load the website links
-     x+= "<hr><div class=\"w3-content w3-display-container\">";
+     x+= "<div class=\"w3-content w3-display-container\">";
      x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
      x+="<p><a href=\"" + webl1 +" target=\"_blank\"> "+ webl1name +"</a></p> ";
      x+="</div>";
@@ -252,7 +253,7 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
    }
    if (webl2 != "PAZ")
    {
-     x+= "<hr><div class=\"w3-content w3-display-container\">";
+     x+= "<div class=\"w3-content w3-display-container\">";
      x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
      x+= "<p><a href=\"" + webl2 +" target=\"_blank\"> "+ webl2name +"</a></p> ";
      x+="</div>";
@@ -261,7 +262,7 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
    }
    if (don1 != "PAZ")
    {
-     x+= "<hr><div class=\"w3-content w3-display-container\">";
+     x+= "<div class=\"w3-content w3-display-container\">";
      x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
      x+= "<p><a class=\"w3-button w3-blue\" href=\"" +don1 +" target=\"_blank\"> Donate" +"</a></p> ";
      x+="</div>";
@@ -273,7 +274,7 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
    }
    if (don2 != "PAZ")
    {
-     x+= "<hr><div class=\"w3-content w3-display-container\">";
+     x+= "<div class=\"w3-content w3-display-container\">";
      x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
      x+= "<p><a class=\"w3-button w3-blue\" href=\"" + don2 +" target=\"_blank\"> Donate" +"</a></p> ";
      x+="</div>";
@@ -313,7 +314,7 @@ x="";
 //title, timest, timeen, stdate, endate, addr, des, img, webl1, webl1name, webl2, webl2name, don1, don2, hash
 //"<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].description +"\',\'"+ prog.programs[i].picLink  + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
 x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
-+"<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
++"<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\' ,\'"+ prog.programs[i].link1 + "\' ,\'" + prog.programs[i].link1name + "\' ,\'"+ prog.programs[i].link2+ "\' ,\'"+ prog.programs[i].link2name + "\' ,\'"+ prog.programs[i].donatelink1 + "\' ,\'"+ prog.programs[i].donatelink2 + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
 +"<img  onclick=\"ShowInfo(\'"
 + prog.programs[i].name  + "\',\'"
 + prog.programs[i].description+
@@ -366,7 +367,7 @@ if (prog.programs[i].timeStart == "PAZ" || prog.programs[i].timeEnd =="PAZ")
 
   }
 
-  *?
+  *
 }
 
 x+="<p>"+ prog.programs[i].eventHashTag +"</p>";
@@ -376,6 +377,7 @@ x+="<p class=\"w3-hide\"><pf>"+ prog.programs[i].searchString +"</pf></p>";
 
 
 
++ "\' ,\'"+ prog.programs[i].link1 + "\' ,\'" + prog.programs[i].link1name + "\' ,\'"+ prog.programs[i].link2+ "\' ,\'"+ prog.programs[i].link2name + "\' ,\'"+ prog.programs[i].donatelink1 + "\' ,\'"+ prog.programs[i].donatelink2
 
 
 
