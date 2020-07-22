@@ -316,10 +316,7 @@ x="";
 //"<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].description +"\',\'"+ prog.programs[i].picLink  + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
 x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
 +"<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\' ,\'"+ prog.programs[i].link1 + "\' ,\'" + prog.programs[i].link1name + "\' ,\'"+ prog.programs[i].link2+ "\' ,\'"+ prog.programs[i].link2name + "\' ,\'"+ prog.programs[i].donatelink1 + "\' ,\'"+ prog.programs[i].donatelink2 + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
-+"<img  onclick=\"ShowInfo(\'"
-+ prog.programs[i].name  + "\',\'"
-+ prog.programs[i].description+
-"\')\" data-src='" + prog.programs[i].picLink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>";
++"<img onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\' ,\'"+ prog.programs[i].link1 + "\' ,\'" + prog.programs[i].link1name + "\' ,\'"+ prog.programs[i].link2+ "\' ,\'"+ prog.programs[i].link2name + "\' ,\'"+ prog.programs[i].donatelink1 + "\' ,\'"+ prog.programs[i].donatelink2 + "\')\" data-src='" + prog.programs[i].picLink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>";
 
 if(prog.programs[i].enddate == "PAZ")
 {
@@ -420,7 +417,7 @@ return x;
   </div>
 
   <p class="w3-left-align ">
-    LetMeKnow do not host or sponsor events, programs, or resources listed on this site. Remember to always be safe while participating in any of these events. By visiting and browsing this site, you are in an agreement of understanding that WE will not be held responsible for the accuracy of the information presented on this site.
+    LetMeKnow does not host or sponsor events, programs, or resources listed on this site. Remember to always be safe while participating in any of these events. By visiting and browsing this site, you are in an agreement of understanding that WE will not be held responsible for the accuracy of the information presented on this site.
     Always be safe and proceed with caution when attening and being part of the events, programs and resources mentioned on this site.
     Please see our <a href="Privacy.html"> Privacy Statement</a></p>
 
