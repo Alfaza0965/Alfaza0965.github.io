@@ -38,7 +38,7 @@
             <a href="AllEvents.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Events</a>
             <a href="AllPrograms.html" class="w3-bar-item w3-button w3-hide-small w3-teal w3-hover-white">All Programs</a>
         <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
-        <a><input type="text" class="w3-right w3-padding-left" id="myInput" onkeyup="filterEvents()" placeholder= "Search in Programs..." title="Search in Programs"></a>
+        <a><input type="text" class="w3-right w3-padding-left" id="myInput" onkeyup="filterPrograms()" placeholder= "Search in Programs..." title="Search in Programs"></a>
  </div>
 
     <!-- Navbar on small screens -->
@@ -283,6 +283,7 @@ if (prog.programs[i].timeStart == "PAZ" || prog.programs[i].timeEnd =="PAZ")
 }
 x+="<p><a>"+ prog.programs[i].address +"</a></p>";
 x+="<p onClick='ShowDescription()'>"+ tmpDes +"</p>";
+x+="<p class='w3-hide'><pf>"+ prog.programs[i].searchString +"</pf></p>";
 
 x+="</div><br></div></div>";
 
@@ -371,7 +372,7 @@ function openNav() {
 var input, filter,div, p, li,pf, a, i, txtValue;
 
 
-function filterEvents() {
+function filterPrograms() {
     var elmnt = document.getElementById("loadPrograms");
         elmnt.scrollIntoView();
         input = document.getElementById("myInput");
