@@ -20,26 +20,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="site2.css">
 
-<!--<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
--->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body id="myPage" onload="checkCookie()">
-
-<div id="cookiesConsent" class="w3-hide w3-card w3-mobile PanelFloat" style="width:35%">
-    <div class="w3-modal-content w3-card-4 w3-animate-bottom">
-        <header class="w3-container w3-teal">
-            <span onclick="document.getElementById('cookiesConsent').style.display='none'" class="w3-button w3-teal w3-display-topmiddle w3-margin-right w3-margin-right"><i class="fa fa-remove"></i></span>
-            <h4>Cookies Consent </h4>
-        </header>
-        <div class="w3-content  w3-tiny pazOverflow w3-padding">
-            <p>Let Me Know and Let Me Know CoronaVirus Response's website stores data such as<br> cookies to enable important site functionality including analytics, targeting, and <br>personalization. Data Storage Policy</p>
-            <p>Go to our <a class="w3-text-teal" href="/w3css/default.asp">W3.CSS Tutorial</a> to learn more!</p>
-            <button class="w3-btn w3-black" onclick="Agree2Cookies()">Accept Cookies!</button>
-        </div>
-    </div>
-
-</div>
 
 
 
@@ -69,13 +51,12 @@
 
 
    <div class="w3-container w3-margin-bottom w3-opacity-min w3-purple w3">
-    <h2>Let Me Know</h2>
+    <h2 onclick="document.getElementById('cookiesConsent').style.display='block'">Let Me Know</h2>
     <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
     that is meant to help community members become aware of free services and resources that community leaders are providing as well
     as being a central point for the many resources in your community.</p>
 
     </div><br>
-
 
 <!-- -----------------------------------------------------------------------------------Partial Events Row -->
 <hr>
@@ -173,7 +154,7 @@ function openNav() {
 </script>
 
 
-
+<script src="https://live.letmeknowzp.org/js/lazysizes.min.js" async></script>
 
 </body>
 </html>

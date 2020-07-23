@@ -20,21 +20,6 @@
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
 
 
-
-
-	<!-- Add the slick-theme.css if you want default styling --
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<!-- Add the slick-theme.css if you want default styling --
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-	-->
-
-
-
-
-  	<!--
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" rel="stylesheet" />
--->
 <link rel="stylesheet" href="Flickity/flickity.css" media="screen">
 <script src="Flickity/flickity.pkgd.min.js"></script>
 
@@ -81,7 +66,6 @@
 
         <div class="w3-display-bottommiddle w3-container w3-padding-16 w3-mobile w3-hide-small PAZ-Titlemargins-Top" style="width:100%;">
             We would like to highlight <b>Mastering Hope</b> for their work with the community
-            <!--<button class="w3-btn w3-round w3-blue w3-large w3-mobile"> </button> -->
             <a href="highlights/highlight1.html" class="w3-btn w3-round w3-blue w3-large w3-mobile">View</a>
         </div>
 
@@ -184,11 +168,6 @@
 
 
 <!-- -----------------------------------------------------------------------------------Page Title Row -->
-<!--
-<div class="w3-container w3-row-padding w3-padding-64 w3-margin-top" style="position:relative">
-    <h1 class="w3-jumbo w3-text-red w3-shadow w3-row-padding w3-padding-64 w3-margin-top" style="position:absolute;top:-116px;left:24px"><b>Events</b></h1>
-</div>
--->
 <div class="w3-row-padding w3-center w3-padding-64 w3-mobile" id="Events">
          <div class="w3-container" style="position:relative">
     <h1 class="w3-jumbo w3-text-red w3-left-align" ><b>All Events</b></h1>
@@ -224,35 +203,6 @@
 </div>
 
 
-<!----- 3rd Drop Down (Movement) --
-<div class="w3-third w3-container w3-center">
- <div class="w3-dropdown-hover  w3-mobile">
-    <button class="w3-button w3-black">Movements</button>
-    <div class="w3-dropdown-content w3-bar-block w3-border">
-      <a href="#" class="w3-bar-item w3-button">#COVID-19</a>
-      <a href="#" class="w3-bar-item w3-button">#BlackLivesMatter</a>
-      <a href="#" class="w3-bar-item w3-button">#UnitedWeStand</a>
-    </div>
-  </div>
-
-</div>
-</div>
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- -----------------------------------------------------------------------------------Events Row -->
 <hr>
 <div class="w3-row-padding w3-padding-64 w3-margin-top w3-center" id="work">
@@ -275,13 +225,11 @@ var xmlhttp = new XMLHttpRequest();
 var myObj;
 xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            	//var byteArray = new Uint8Array(this.responseText);
 				myObj = JSON.parse(this.responseText);
 				LoadEvents();
 
         }
 };
-//xmlhttp.open("GET", "https://s3-us-west-1.amazonaws.com/zanproduction.org/eventsXported.json", true);
 xmlhttp.open("GET", "https://live.letmeknowzp.org/eventsXported.json", true);
 xmlhttp.send();
 
@@ -319,11 +267,17 @@ document.getElementById("carousel-load").style.display = "none";
 		//myObj = JSON.parse(this.responseText);
                 var x ="";
 				var y ="";
-				//var z ="<div class='carousel-cell'> ";
-				//z+="<button type=\"button\" data-role=\"none\" class=\"slick-prev slick-arrow\" aria-label=\"Previous\" role=\"button\" style=\"display: block;\">Previous</button>";
 				var z ="";
+        var tmpDes = "";
 				for (var i=0; i< myObj.events.length; i++)
                 {
+
+                  if (myObj.events[i].hasOwnProperty("descriptionX")) {
+                  tmpDes = myObj.events[i].descriptionX;
+                  }
+                  else{
+                    tmpDes = myObj.events[i].description;
+                  }
 
                             x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
                              +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
@@ -331,15 +285,10 @@ document.getElementById("carousel-load").style.display = "none";
                              +"<p>"+ myObj.events[i].date +"</p>"
 									           +"<p>"+ myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd +"</p>"
                              +"<p><a>"+ myObj.events[i].address +"</a></p>"
-                             +"<p>"+ myObj.events[i].description +"</p>"
+                             +"<p onClick='ShowDescription()'>"+ tmpDes +"</p>"
 									           +"<p>"+ myObj.events[i].eventHashTag +"<p>"
 									           +"<p class ='w3-hide'><pf>"+ myObj.events[i].searchString +"</pf><p>"
 									           +"</div><br></div>";
-
-
-
-
-
 
         		}
 
@@ -351,16 +300,21 @@ document.getElementById("carousel-load").style.display = "none";
 
           for(k in myObj.ThisWeekEvents)
             {
+              if (myObj.ThisWeekEvents[k].hasOwnProperty("descriptionX")) {
+              tmpDes = myObj.ThisWeekEvents[k].descriptionX;
+              }
+              else{
+                tmpDes = myObj.ThisWeekEvents[k].description;
+              }
               z+="<div class='carousel-cell js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card PAZ-LightTeal w3-container pazOverflow' style='width:40%'>"
                +"<h3> <a>"+myObj.ThisWeekEvents[k].name + "<br><b>" +myObj.ThisWeekEvents[k].date +"</b></a></h3>"
                +"<img class='PAZcenterImg' src='" + myObj.ThisWeekEvents[k].picLink + "' alt='Event Screenshot " + myObj.ThisWeekEvents[k].name+ "'style='width:50%'>"
-               +"<p class =''>"+"" +myObj.ThisWeekEvents[k].name + "<br>"+myObj.ThisWeekEvents[k].timeStart +"-"+ myObj.ThisWeekEvents[k].timeEnd+"<br>"+myObj.ThisWeekEvents[k].address+"<br>"+ myObj.ThisWeekEvents[k].description + "<p><br>"
+               +"<p onClick='ShowDescription2()' class =''>"+"" +myObj.ThisWeekEvents[k].name + "<br>"+myObj.ThisWeekEvents[k].timeStart +"-"+ myObj.ThisWeekEvents[k].timeEnd+"<br>"+myObj.ThisWeekEvents[k].address+"<br>"+ tmpDes + "<p><br>"
                +"</div>";
 
             }
 				document.getElementById("loadEvents").innerHTML = x;
 				document.getElementById("citiesdd").innerHTML = y;
-			//	z+="</div>";
 				document.getElementById("ThisWeek").innerHTML = z;
         document.getElementById("laoding").style.display = "none";
 
@@ -400,7 +354,31 @@ document.getElementById("carousel-load").style.display = "none";
 
 
 <script>
+function ShowDescription() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("showFullDescription");
 
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    moreText.style.display = "inline";
+  }
+}
+
+function ShowDescription2() {
+  var dots = document.getElementById("dots2");
+  var moreText = document.getElementById("showFullDescription2");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    moreText.style.display = "inline";
+  }
+}
 
 
 
