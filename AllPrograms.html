@@ -158,9 +158,11 @@ xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
                 var prog = JSON.parse(this.responseText);
                 var x="";
+                var num =0;
                 for (i in prog.programs)
                 {
-                    x += parseProgram(prog, i);
+                    num=parseInt(i)+parseInt(1);
+                    x += parseProgram(prog, i,num);
                 }//End checking of input length
                 document.getElementById("loadPrograms").innerHTML = x;
         }
@@ -243,9 +245,10 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
 }
 
 
-function parseProgram(prog, i)
+function parseProgram(prog, i, num)
 {
 x="";
+//num = 1;
 var tmpDes = "";
 if (prog.programs[i].hasOwnProperty("descriptionX")) {
 tmpDes = prog.programs[i].descriptionX;
@@ -253,8 +256,10 @@ tmpDes = prog.programs[i].descriptionX;
 else{
   tmpDes = prog.programs[i].description;
 }
-x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
-+"<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\' ,\'"+ prog.programs[i].link1 + "\' ,\'" + prog.programs[i].link1name + "\' ,\'"+ prog.programs[i].link2+ "\' ,\'"+ prog.programs[i].link2name + "\' ,\'"+ prog.programs[i].donatelink1 + "\' ,\'"+ prog.programs[i].donatelink2 + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
+x+= "<div id='eventItems' class='w3-row-padding w3-third'>";
+x+= "<div class='PAZ-margin-6-Bottom w3-row-padding'>";
+x+= "<div class='w3-container w3-hover-shadow w3-center w3-card w3-white pazOverflow' style='min-height:669px'>";
+x+="<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\' ,\'"+ prog.programs[i].link1 + "\' ,\'" + prog.programs[i].link1name + "\' ,\'"+ prog.programs[i].link2+ "\' ,\'"+ prog.programs[i].link2name + "\' ,\'"+ prog.programs[i].donatelink1 + "\' ,\'"+ prog.programs[i].donatelink2 + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
 +"<img onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\' ,\'"+ prog.programs[i].link1 + "\' ,\'" + prog.programs[i].link1name + "\' ,\'"+ prog.programs[i].link2+ "\' ,\'"+ prog.programs[i].link2name + "\' ,\'"+ prog.programs[i].donatelink1 + "\' ,\'"+ prog.programs[i].donatelink2 + "\')\" data-src='" + prog.programs[i].picLink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>";
 
 if(prog.programs[i].enddate == "PAZ")
@@ -282,12 +287,13 @@ if (prog.programs[i].timeStart == "PAZ" || prog.programs[i].timeEnd =="PAZ")
   else {x+="";}
 }
 x+="<p><a>"+ prog.programs[i].address +"</a></p>";
-x+="<p onClick='ShowDescription()'>"+ tmpDes +"</p>";
+x+="<p onClick=\"ShowDescription('dots"+(num)+"'"+",'showFullDescription"+(num)+"'"+")\">"+ tmpDes +"</p>";
+//x+="<p onClick=\"ShowDescription(\'showFullDescription"+i+"\')>"+ tmpDes +"</p>";
 x+="<p class='w3-hide'><pf>"+ prog.programs[i].searchString +"</pf></p>";
 
-x+="</div><br></div></div>";
+x+="</div><hr></div></div>";
 
-
+//num++;
 return x;
 
 
@@ -328,9 +334,9 @@ return x;
 
 
 <script>
-function ShowDescription() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("showFullDescription");
+function ShowDescription(dotsx,idx) {
+  var dots = document.getElementById(dotsx);
+  var moreText = document.getElementById(idx);
 
   if (dots.style.display === "none") {
     dots.style.display = "inline";
