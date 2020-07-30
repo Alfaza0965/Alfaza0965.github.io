@@ -269,9 +269,11 @@ document.getElementById("carousel-load").style.display = "none";
 				var y ="";
 				var z ="";
         var tmpDes = "";
+        var num =0;
+        //var num2 =0;
 				for (var i=0; i< myObj.events.length; i++)
                 {
-
+                  num=parseInt(i)+parseInt(1);
                   if (myObj.events[i].hasOwnProperty("descriptionX")) {
                   tmpDes = myObj.events[i].descriptionX;
                   }
@@ -285,7 +287,7 @@ document.getElementById("carousel-load").style.display = "none";
                              +"<p>"+ myObj.events[i].date +"</p>"
 									           +"<p>"+ myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd +"</p>"
                              +"<p><a>"+ myObj.events[i].address +"</a></p>"
-                             +"<p onClick='ShowDescription()'>"+ tmpDes +"</p>"
+                             +"<p onClick=\"ShowDescription('dots"+(num)+"'"+",'showFullDescription"+(num)+"'"+")\">"+ tmpDes +"</p>"
 									           +"<p>"+ myObj.events[i].eventHashTag +"<p>"
 									           +"<p class ='w3-hide'><pf>"+ myObj.events[i].searchString +"</pf><p>"
 									           +"</div><br></div>";
@@ -297,9 +299,10 @@ document.getElementById("carousel-load").style.display = "none";
 					{
 						y+="<a onclick='filterEventsByDropDownCity(&quot;" +myObj.cities[j].city+"&quot;)' class='w3-bar-item w3-button'>"+ myObj.cities[j].city+"</a>";
 					}
-
+          //num =0;
           for(k in myObj.ThisWeekEvents)
             {
+              //num2=parseInt(k)+parseInt(2);
               if (myObj.ThisWeekEvents[k].hasOwnProperty("descriptionX")) {
               tmpDes = myObj.ThisWeekEvents[k].descriptionX;
               }
@@ -309,9 +312,11 @@ document.getElementById("carousel-load").style.display = "none";
               z+="<div class='carousel-cell js-flickity w3-container w3-hover-shadow w3-row-padding w3-center w3-card PAZ-LightTeal w3-container pazOverflow' style='width:40%'>"
                +"<h3> <a>"+myObj.ThisWeekEvents[k].name + "<br><b>" +myObj.ThisWeekEvents[k].date +"</b></a></h3>"
                +"<img class='PAZcenterImg' src='" + myObj.ThisWeekEvents[k].picLink + "' alt='Event Screenshot " + myObj.ThisWeekEvents[k].name+ "'style='width:50%'>"
-               +"<p onClick='ShowDescription2()' class =''>"+"" +myObj.ThisWeekEvents[k].name + "<br>"+myObj.ThisWeekEvents[k].timeStart +"-"+ myObj.ThisWeekEvents[k].timeEnd+"<br>"+myObj.ThisWeekEvents[k].address+"<br>"+ tmpDes + "<p><br>"
-               +"</div>";
+               +"<p onClick=''>"+"" +myObj.ThisWeekEvents[k].name + "<br>"+myObj.ThisWeekEvents[k].timeStart +"-"+ myObj.ThisWeekEvents[k].timeEnd+"<br>"+myObj.ThisWeekEvents[k].address+"<br>"+ tmpDes + "<p><br>"
+               //+"<p onClick='ShowDescription2()' class =''>"+"" +myObj.ThisWeekEvents[k].name + "<br>"+myObj.ThisWeekEvents[k].timeStart +"-"+ myObj.ThisWeekEvents[k].timeEnd+"<br>"+myObj.ThisWeekEvents[k].address+"<br>"+ tmpDes + "<p><br>"
 
+               +"</div>";
+// /<p onClick=\"ShowDescription2('dots2"+(num)+"'"+",'showFullDescription2"+(num)+"'"+")\">"+ tmpDes +"</p>"
             }
 				document.getElementById("loadEvents").innerHTML = x;
 				document.getElementById("citiesdd").innerHTML = y;
@@ -354,9 +359,10 @@ document.getElementById("carousel-load").style.display = "none";
 
 
 <script>
-function ShowDescription() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("showFullDescription");
+
+function ShowDescription(dotsx,idx) {
+  var dots = document.getElementById(dotsx);
+  var moreText = document.getElementById(idx);
 
   if (dots.style.display === "none") {
     dots.style.display = "inline";
@@ -367,6 +373,7 @@ function ShowDescription() {
   }
 }
 
+/*
 function ShowDescription2() {
   var dots = document.getElementById("dots2");
   var moreText = document.getElementById("showFullDescription2");
@@ -379,9 +386,21 @@ function ShowDescription2() {
     moreText.style.display = "inline";
   }
 }
+*
+function ShowDescription2(idx) {
+  var dots = document.getElementById(dotsx);
+  var moreText = document.getElementById(idx);
 
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    moreText.style.display = "inline";
+  }
+}
 
-
+*/
 
 // Script for side navigation
 function w3_open() {
