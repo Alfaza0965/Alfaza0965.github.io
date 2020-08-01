@@ -84,7 +84,7 @@ xmlhttp.onreadystatechange = function() {
                 {
                   if(i <3){
                     x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
-                    +"<h3> <a href='#'>"+myObj.events[i].name + "</a></h3>"
+                    +"<h3>"+myObj.events[i].name + "</h3>"
   									+"<img data-src='" + myObj.events[i].picLink + "' class='lazyload' alt='Event Screenshot " + myObj.events[i].name+ "'style='width:70%'>"
                     +"<p>"+ myObj.events[i].timeStart +"</p>"
                     +"<p>"+ myObj.events[i].date +"</p>"
@@ -132,7 +132,7 @@ xmlhttp.onreadystatechange = function() {
                     if(i <3){
 
                       x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
-                      +"<h3> <u>"+ prog.programs[i].name + "</u></h3>"
+                      +"<h3>"+ prog.programs[i].name + "</h3>"
                       +"<img data-src='" + prog.programs[i].picLink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>";
 
                       if(prog.programs[i].enddate == "PAZ")
