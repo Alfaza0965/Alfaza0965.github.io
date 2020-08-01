@@ -197,8 +197,9 @@ xmlhttp.send();
 
 
   <div class="w3-bar w3-black w3-margin-bottom w3-mobile">
-    <button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'ConTab')">Questions?</button>
-    <button class="w3-bar-item w3-button tablink " onclick="openCity(event,'EveTab')">Reach your Community</button>
+<button class="w3-bar-item w3-button tablink w3-teal" onclick="openCity(event,'EveTab')">Reach your Community</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'ConTab')">Questions?</button>
+
 
 
 
@@ -222,9 +223,9 @@ xmlhttp.send();
 
   </div>
 
-  <div id="EveTab" class="w3-container PAZ-animate-fading w3-mobile city" style="display:none">
-<!-- -----------------------------------------------------------------Submit Event -->
-   <div class="w3-container w3-card-4 w3-margin-right PAZ-margin-18-LR w3-padding w3-left-align">
+  <div id="EveTab" class="w3-container PAZ-animate-fading w3-mobile city" >
+<!-- -----------------------------------------------------------------Submit Event/Program -->
+   <div class="w3-container w3-card-4 w3-margin-right PAZ-margin-18-LR w3-padding w3-left-align pazOverflow">
         <h2 class="w3-text-blue w3-center">Reach out to your community</h2>
 
         <p > Know of, or are you hosting an event that you would like your community to become aware of? <br>
@@ -246,7 +247,7 @@ xmlhttp.send();
 
 
 <!-- -----------------------------------------------------------------Submit Inquiry -->
-  <div id="ConTab" class="w3-container PAZ-margin-18-LR PAZ-animate-fading city" >
+  <div id="ConTab" class="w3-container PAZ-margin-18-LR PAZ-animate-fading city" style="display:none" >
 
   <script type="text/javascript">var submitted=false;</script>
   <form id="cform" class="w3-container w3-card-4" target="formDestination" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeciXWoB0rB8UUnnL4xv4l7uU1kcnlK0g123iIcjjjwZx2SAw/formResponse" method="post" target="hidden_iframe"
@@ -362,7 +363,8 @@ function openNav() {
 
 
 
-<script defer src="https://live.letmeknowzp.org/js/lazysizes.min.js" as="script" async></script>
+<!-- <script defer src="https://live.letmeknowzp.org/js/lazysizes.min.js" as="script" async></script> -->
+<script defer src="js/lazysizes.min.js" as="script" async></script>
 
 
 <div class="w3-hide">
