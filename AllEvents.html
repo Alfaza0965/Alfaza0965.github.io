@@ -39,7 +39,7 @@
     <a href="index.html" class="w3-bar-item w3-button "><i class="fa fa-home w3-margin-right"></i>Home</a>
             <a href="AllEvents.html" class="w3-bar-item w3-button w3-hide-small w3-teal w3-hover-white">All Events</a>
             <a href="AllPrograms.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Programs</a>
-            <a href="Resources.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Resources</a>
+            <!--<a href="Resources.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Resources</a>-->
         <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
         <a><input type="text" class="w3-right" id="myInput" onkeyup="filterEvents()" placeholder= "Search in Events..." title="Search for an event"></a>
  </div>
@@ -48,7 +48,7 @@
     <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
         <a href="AllEvents.html" class="w3-bar-item w3-button">All Events</a>
         <a href="AllPrograms.html" class="w3-bar-item w3-button">All Programs</a>
-        <a href="Resources.html" class="w3-bar-item w3-button">Resources</a>
+        <!--<a href="Resources.html" class="w3-bar-item w3-button">Resources</a>-->
         <a href="index.html#contact" class="w3-bar-item w3-button">Contact</a>
     </div>
 </div>
@@ -286,25 +286,25 @@ document.getElementById("carousel-load").style.display = "none";
 				var y ="";
 				var z ="";
         var tmpDes = "";
-        var num =0;
+        var numz = 0;
         //var num2 =0;
 				for (var i=0; i< myObj.events.length; i++)
                 {
-                  num=parseInt(i)+parseInt(1);
+
                   if (myObj.events[i].hasOwnProperty("descriptionX")) {
                   tmpDes = myObj.events[i].descriptionX;
                   }
                   else{
                     tmpDes = myObj.events[i].description;
                   }
-
+                            numz=parseInt(i)+parseInt(1);
                             x+= "<div id='eventItems' class='w3-row-padding w3-third'><div class='w3-container w3-hover-shadow w3-row-padding w3-center w3-card w3-white w3-container pazOverflow' style='min-height:669px'>"
                              +"<h3> <a>"+myObj.events[i].name + "</a></h3>"
                              +"<img data-src='" + myObj.events[i].picLink + "' alt='Event Screenshot " + myObj.events[i].name+ "' class='lazyload' style='width:50%'>"
                              +"<p>"+ myObj.events[i].date +"</p>"
 									           +"<p>"+ myObj.events[i].timeStart +"-"+ myObj.events[i].timeEnd +"</p>"
                              +"<p><a>"+ myObj.events[i].address +"</a></p>"
-                             +"<p onClick=\"ShowDescription('dots"+(num)+"'"+",'showFullDescription"+(num)+"'"+")\">"+ tmpDes +"</p>"
+                             +"<p onClick=\"ShowDescription('dots"+(numz)+"'"+",'showFullDescription"+(numz)+"'"+")\">"+ tmpDes +"</p>"
 									           +"<p>"+ myObj.events[i].eventHashTag +"<p>"
 									           +"<p class ='w3-hide'><pf>"+ myObj.events[i].searchString +"</pf><p>"
 									           +"</div><br></div>";

@@ -37,7 +37,7 @@
     <a href="index.html" class="w3-bar-item w3-button "><i class="fa fa-home w3-margin-right"></i>Home</a>
             <a href="AllEvents.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Events</a>
             <a href="AllPrograms.html" class="w3-bar-item w3-button w3-hide-small w3-teal w3-hover-white">All Programs</a>
-            <a href="Resources.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Resources</a>
+          <!--  <a href="Resources.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Resources</a>-->
         <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
         <a><input type="text" class="w3-right w3-padding-left" id="myInput" onkeyup="filterPrograms()" placeholder= "Search in Programs..." title="Search in Programs"></a>
  </div>
@@ -46,7 +46,7 @@
     <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
         <a href="AllEvents.html" class="w3-bar-item w3-button">All Events</a>
         <a href="AllPrograms.html" class="w3-bar-item w3-button">All Programs</a>
-        <a href="Resources.html" class="w3-bar-item w3-button">Resources</a>
+      <!--<a href="Resources.html" class="w3-bar-item w3-button">Resources</a>-->
         <a href="index.html#contact" class="w3-bar-item w3-button">Contact</a>
     </div>
 </div>
@@ -213,8 +213,13 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
    if (webl1 != "PAZ")
    {
      //Load the website links
-     x+= "<div class=\"w3-content w3-display-container\">";
-     x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
+     x+= "<div class=\"pazOverflow w3-content w3-display-container\">";
+     if(webl2 == "PAZ")
+     {
+       x+="<div class=\" PAZ-margin-6-Bottom\">";
+     }
+     else {x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";}
+
      x+="<p><a href='" + webl1 +"' target=\"_blank\"> "+ webl1name +"</a></p> ";
      x+="</div>";
      if(webl2 == "PAZ")
@@ -225,7 +230,7 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
    if (webl2 != "PAZ")
    {
      var tmp = "google.com";
-     x+= "<div class=\"w3-content w3-display-container\">";
+     x+= "<div class=\" w3-content w3-display-container\">";
      x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
      x+= "<p><a href='" + webl2 +"' target=\"_blank\"> "+ webl2name +"</a></p> ";
      x+="</div>";
@@ -234,9 +239,9 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
    }
    if (don1 != "PAZ")
    {
-     x+= "<div class=\"w3-content w3-display-container\">";
-     x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
-     x+= "<p class=\" w3-blue Paz-Donate\"><b>Donate:</b> </br>" +don1 +"</p> ";
+     x+= "<div class=\"pazOverflow w3-content w3-display-container\">";
+     x+="<div class=\"pazOverflow w3-half PAZ-margin-6-Bottom\">";
+     x+= "<p class=\" pazOverflow w3-blue Paz-Donate\"><b>Donate:</b> </br>" +don1 +"</p> ";
      x+="</div>";
      if(don2 == "PAZ"){
        x+="</div>";
@@ -247,8 +252,8 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
    if (don2 != "PAZ")
    {
      x+= "<div class=\"w3-content w3-display-container\">";
-     x+="<div class=\"w3-half PAZ-margin-6-Bottom\">";
-     x+= "<p class=\" w3-blue Paz-Donate\"><b>Donate:</b> </br>" +don2 +"</p> ";
+     x+="<div class=\"pazOverflow w3-half PAZ-margin-6-Bottom\">";
+     x+= "<p class=\" pazOverflow w3-blue Paz-Donate\"><b>Donate:</b> </br>" +don2 +"</p> ";
      x+="</div>";
      x+="</div>";
    }
