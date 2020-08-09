@@ -197,16 +197,34 @@ function ShowInfo(title, timest, timeen, stdate, endate, addr, des, img, webl1, 
    x+= "<span onclick='document.getElementById(\"id01\").style.display=\"none\" ' class='w3-button w3-red w3-display-topright'>&times;</span>";
    x+= "<h2><b>"+title+"</b></h2>";
    x+= "<img  data-src=\'"+ img +" \' class='lazyload' alt='Image Logo Event' style='width:70%'>";
-
-   if(timeen == "PAZ")
+//Date logic
+   if(endate == "PAZ")
    {
-     x+="<p>"+ stdate +"</p>";
+     x+="<p><b>Starts(ed): </b>"+ stdate +"</p>";
+     x+="<p><b>Ends: </b> Ongoing, until further notice</p>";
    }
    else
    {
      x+="<p>"+ stdate+ " - "+ endate +"</p>";
    }
-   x+= "<p>"+timest +" - " + timeen +"</p>";
+
+//Time logic
+  if(timest != "PAZ" && timeen !="PAZ")
+    {
+      x+= "<p>"+timest +" - " + timeen +"</p>";
+    }
+  if (timest == "PAZ" || timeen =="PAZ")
+  {
+    if(timest == "PAZ" && timeen !="PAZ" )
+    {
+      x+="<p>"+ timeen +"</p>";
+    }
+    if (timest != "PAZ" && timeen =="PAZ" )
+    {
+        x+="<p>"+ timest +"</p>";
+    }
+    else {x+="";}
+  }
    x+= "<p>"+ addr +"</p>";
    x+= "<p>"+des+"</p>";
    x+= "<hr>";
@@ -280,7 +298,7 @@ else{
 }
 x+= "<div id='eventItems' class='w3-row-padding w3-third'>";
 x+= "<div class='PAZ-margin-6-Bottom w3-row-padding'>";
-x+= "<div class='w3-container w3-hover-shadow w3-center w3-card w3-white pazOverflow' style='min-height:669px'>";
+x+= "<div class='w3-container w3-hover-shadow w3-center w3-card w3-white pazOverflow' style='min-height:769px'>";
 x+="<h3 onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\' ,\'"+ prog.programs[i].link1 + "\' ,\'" + prog.programs[i].link1name + "\' ,\'"+ prog.programs[i].link2+ "\' ,\'"+ prog.programs[i].link2name + "\' ,\'"+ prog.programs[i].donatelink1 + "\' ,\'"+ prog.programs[i].donatelink2 + "\')\"> <u>"+ prog.programs[i].name + "</u></h3>"
 +"<img onclick=\"ShowInfo(\'"+ prog.programs[i].name  + "\' ,\'"+ prog.programs[i].timeStart+ "\' ,\'"+ prog.programs[i].timeEnd +"\' ,\'" + prog.programs[i].startdate +"\' ,\'" + prog.programs[i].enddate +"\' ,\'"+ prog.programs[i].address +"\' ,\'" + prog.programs[i].description+"\',\'"+ prog.programs[i].picLink  + "\' ,\'"+ prog.programs[i].link1 + "\' ,\'" + prog.programs[i].link1name + "\' ,\'"+ prog.programs[i].link2+ "\' ,\'"+ prog.programs[i].link2name + "\' ,\'"+ prog.programs[i].donatelink1 + "\' ,\'"+ prog.programs[i].donatelink2 + "\')\" data-src='" + prog.programs[i].picLink + "' class='lazyload' alt='Event Screenshot " + prog.programs[i].title+ "'style='width:70%'>";
 
@@ -293,7 +311,7 @@ else
   {
     x+="<p>"+ prog.programs[i].startdate+ " - "+ prog.programs[i].enddate +"</p>";
   }
-if(prog.programs[i].timeStart != "PAZ" || prog.programs[i].timeEnd !="PAZ")
+if(prog.programs[i].timeStart != "PAZ" && prog.programs[i].timeEnd !="PAZ")
   {
     x+="<p>"+ prog.programs[i].timeStart + "-" +  prog.programs[i].timeEnd +"</p>";
   }
