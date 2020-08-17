@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<title>Let Me Know-Coronavirus Response</title>
+<head>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3BWXTCCVJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-C3BWXTCCVJ');
+  </script>
+
+
+
+</head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="site2.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+
+
+
+<!-- -----------------------------------------------------------------------------------------------------------Navbar(Menu) -->
+<div id="menu" class="w3-top">
+ <div class="w3-bar w3-black w3-left-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>Home</a>
+            <a href="AllEvents.html#ThisWeek" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Events</a>
+            <a href="AllPrograms.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">All Programs</a>
+            <a href="Resources.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Resources</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+ </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
+        <a href="AllEvents.html#ThisWeek" class="w3-bar-item w3-button">All Events</a>
+        <a href="AllPrograms.html" class="w3-bar-item w3-button">All Programs</a>
+        <a href="Resources.html" class="w3-bar-item w3-button">Resources</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+</div>
+
+<!-- --------------------------------------------------------------------------------------------------------Image Header -->
+<div class="w3-display-container w3-animate-opacity w3-mobile w3-hidden">
+    <img data-src="img/Design4-8.png" alt="Website Banner 4-8" class="lazyload" style="width:100%;max-height:600px;">
+
+</div>
+
+
+   <div class="w3-container w3-margin-bottom w3-opacity-min w3-purple w3">
+    <h2 onclick="document.getElementById('cookiesConsent').style.display='block'">Let Me Know</h2>
+    <p>In an effort to assist the community during these unprecedented times, <b>Let Me Know</b> is a project under development
+    that is meant to help community members become aware of free services and resources that community leaders are providing as well
+    as being a central point for the many resources in your community.</p>
+
+    </div><br>
+
+
+<!-- --------------------------------------------------------------------------------------------------------Google Translate Widget Closure lib -->
+<!-- https://developers.google.com/closure/library-->
+  <div class = "w3-container w3-center PAZ-margin-18-LR " id="google_translate_element"></div>
+
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+
+
+
+    }
+    </script>
+
+    <script type="text/javascript" src="js/translate.js"></script>
+
+
+
+<!-- -----------------------------------------------------------------------------------Partial Events Row -->
+<hr>
+<div class="w3-row-padding w3-padding-64 w3-margin-top" id="work">
+    <!-- -------------------------------------------------------------------------------------------------------Go to more events Button Container -->
+<div class="w3-container" style="position:relative">
+    <h1 class="w3-jumbo w3-text-red w3-shadow w3-left-align PAZ-Titlemargins-Top" ><b>Resources</b></h1>
+
+<div>
+
+
+<p id="loadResources"></p>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+                var res = JSON.parse(this.responseText);
+                var x="<ul class='w3-ul w3-card-4 w3-white'>";
+                var num =0;
+                for (i in res.resources)
+                {
+                  x+=" <li class='w3-bar'> <div class='w3-bar-item'>";
+                  x+="<span class='w3-large'><b><pf>" + res.resources[i].title +"<pf></b></span><br>";
+                  x+="<span><pf>"+ res.resources[i].address +"<pf></span><br><br>";
+                  x+="<span><pf>"+ res.resources[i].description +"<pf></span>";
+                  x+="</div></li>";
+
+
+                }//End checking of input length
+                x+="</ul>";
+
+                document.getElementById("loadResources").innerHTML = x;
+        }
+};
+xmlhttp.open("GET", "https://live.letmeknowzp.org/resourcesXported.json", true);
+xmlhttp.send();
+
+
+</script>
+
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------Footer -->
+<footer class="w3-container  w3-teal w3-center">
+    <h4><u>Coming Soon</u></h4>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="App Store"> <img src="img/download-on-the-app-store-apple.svg"  class="w3-button" alt="App Store icon" style="width:20%"> <!--Coming Soon --></p>
+    <p class="w3-large w3-teal" href="javascript:void(0)" title="Play Store"> <img src="img/google-play-download-android-app.svg" class="w3-button" alt="Play Store icon" style="width:20%"> <!--Coming Soon --></p>
+
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+
+
+  <p class="w3-left-align ">
+    LetMeKnow do not host or sponsor events, programs, or resources listed on this site. Remember to always be safe while participating in any of these events. By visiting and browsing this site, you are in an agreement of understanding that WE will not be held responsible for the accuracy of the information presented on this site.
+    Always be safe and proceed with caution when attening and being part of the events, programs and resources mentioned on this site.
+    Please see our <a href="Privacy.html"> Privacy Statement</a></p>
+
+
+
+</footer>
+
+
+
+<script>
+// Script for side navigation
+function w3_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "300px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+
+<script src="https://live.letmeknowzp.org/js/lazysizes.min.js" async></script>
+
+</body>
+</html>
